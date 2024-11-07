@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Casino Leaderboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Internal CSS -->
+    <style>
+        /* Fruit images at the bottom */
+        .rollete-left, .goat-right {
+            position: absolute;
+            bottom: 0; /* Position them at the bottom of the page */
+            width: 10%; /* Control the size of the images */
+            height: auto;
+            z-index: -1; /* Ensure images stay behind content */
+        }
+
+        .rollete-left {
+            left: 0; /* Align to the left of the screen */
+            background-image: url('images/rollete.png'); /* Image URL for the left side */
+            background-size: contain; /* Ensure the image scales properly */
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5; /* Add transparency for visual effect */
+        }
+
+        .goat-right {
+            right: 0; /* Align to the right of the screen */
+            background-image: url('images/goat.png'); /* Image URL for the right side */
+            background-size: contain; /* Ensure the image scales properly */
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5; /* Add transparency for visual effect */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Section with links and small image -->
+    <div class="top-links">
+        <a href="https://www.goated.com/r/VIPS" class="play-now">PLAY NOW</a>
+        <img src="images/goated.png" alt="Small Image" class="small-image">
+        <a href="https://kick.com/goatedmode" class="goated-mode">GoatedMode</a>
+    </div>
+
+    <!-- Fruit images on the sides -->
+    <div class="fruit-left"></div>
+
+    <!-- Headline Section -->
+    <header class="header">
+        <h1 class="title">2,000$ MONTHLY WAGER LEADERBOARD</h1>
+    </header>
+
+    <div class="fruit-right"></div>
+
+   <!-- Top 3 Cards Section -->
+   <div class="leaderboard">
+    <div class="top-three">
+        <!-- 2nd Place Card -->
+        <div class="card second">
+            <div class="grade-badge">2nd</div>
+            <div class="text-container">
+                <h3 class="username">ASC***GR</h3>
+            </div>
+            <p class="wagered-label">Wagered:</p>
+            <div class="text-container">
+                <p class="wager-value" id="wager2">$119,500</p>
+            </div>
+            <p class="bonus-label">Prize:</p>
+            <div class="text-container">
+                <p class="bonus" id="bonus2">$500</p>
+            </div>
+        </div>
+
+        <!-- 1st Place Card -->
+        <div class="card first">
+            <div class="grade-badge">1st</div>
+            <div class="text-container">
+                <h3 class="username">RUE****SDW</h3>
+            </div>
+            <p class="wagered-label">Wagered:</p>
+            <div class="text-container">
+                <p class="wager-value" id="wager1">$190,000</p>
+            </div>
+            <p class="bonus-label">Prize:</p>
+            <div class="text-container">
+                <p class="bonus" id="bonus1">$1,000</p>
+            </div>
+        </div>
+
+        <!-- 3rd Place Card -->
+        <div class="card third">
+            <div class="grade-badge">3rd</div>
+            <div class="text-container">
+                <h3 class="username">GOS***SW</h3>
+            </div>
+            <p class="wagered-label">Wagered:</p>
+            <div class="text-container">
+                <p class="wager-value" id="wager3">$79,000</p>
+            </div>
+            <p class="bonus-label">Prize:</p>
+            <div class="text-container">
+                <p class="bonus" id="bonus3">$250</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Countdown Timer Section -->
+    <div class="countdown-container">
+        <div class="countdown-square">
+            <div id="days" class="countdown-value">00</div>
+            <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-square">
+            <div id="hours" class="countdown-value">00</div>
+            <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-square">
+            <div id="minutes" class="countdown-value">00</div>
+            <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-square">
+            <div id="seconds" class="countdown-value">00</div>
+            <div class="countdown-label">Seconds</div>
+        </div>
+    </div>
+
+    <!-- Description Section -->
+    <div class="description">
+        <p>Welcome to the Goated Monthly Leaderboard! The top players who wager the most this month will be rewarded with exclusive bonuses. Are you ready to claim the top spot?</p>
+    </div>
+
+    <!-- Rest of Leaderboard (Users 4-10) -->
+    <div class="leaderboard-container">
+        <!-- Title Row -->
+        <div class="title-row">
+            <div class="title-cell">Place</div>
+            <div class="title-cell">Username</div>
+            <div class="title-cell">Wagered</div>
+            <div class="title-cell">Prize</div>
+        </div>
+
+        <!-- User 4 -->
+        <div class="user-row">
+            <div class="user-place">4th</div>
+            <div class="user-username">TOS***WW</div>
+            <div class="user-wagered">$48,000</div>
+            <div class="user-prize">$125</div>
+        </div>
+
+        <!-- User 5 -->
+        <div class="user-row">
+            <div class="user-place">5th</div>
+            <div class="user-username">G2A***SR</div>
+            <div class="user-wagered">$37,800</div>
+            <div class="user-prize">$125</div>
+        </div>
+
+        <!-- User 6 -->
+        <div class="user-row">
+            <div class="user-place">6th</div>
+            <div class="user-username">WET***RT</div>
+            <div class="user-wagered">$37,500</div>
+            <div class="user-prize">$125</div>
+        </div>
+
+        <!-- User 7 -->
+        <div class="user-row">
+            <div class="user-place">7th</div>
+            <div class="user-username">24A***SQ</div>
+            <div class="user-wagered">$27,200</div>
+            <div class="user-prize">$125</div>
+        </div>
+
+        <!-- User 8 -->
+        <div class="user-row">
+            <div class="user-place">8th</div>
+            <div class="user-username">1SD***AW</div>
+            <div class="user-wagered">$17,100</div>
+            <div class="user-prize">$125</div>
+        </div>
+
+        <!-- User 9 -->
+        <div class="user-row">
+            <div class="user-place">9th</div>
+            <div class="user-username">RES***MR</div>
+            <div class="user-wagered">$12,000</div>
+            <div class="user-prize">$125</div>
+        </div>
+
+        <!-- User 10 -->
+        <div class="user-row">
+            <div class="user-place">10th</div>
+            <div class="user-username">GSS***SA</div>
+            <div class="user-wagered">$6,900</div>
+            <div class="user-prize">$125</div>
+        </div>
+    </div>
+
+    <!-- Fruit images at the bottom -->
+    <div >
+        <img src="images/rollete.png" class="rollete-left">
+
+        <img src="images/goat.png" class="goat-right">
+    </div>
+
+
+    <div class="footer">
+        <p>Be Gamble Aware. <a href="https://www.begambleaware.org" target="_blank">Learn more</a></p>
+    </div>
+
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

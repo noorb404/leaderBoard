@@ -1,0 +1,689 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Ensure the header stays on top */
+    align-items: center; /* Horizontally center all content */
+    justify-content: flex-start; /* Align content to the top */
+    min-height: 100vh; /* Full viewport height */
+    background-image: url('images/background.png'); /* Path to background image */
+    background-position: center center; /* Centers the image */
+    background-size: cover; /* Ensures the background image covers the whole page */
+    background-attachment: fixed;
+}
+
+/* Top Links Section */
+.top-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin-top: 20px;
+}
+
+.top-links a {
+    font-family: 'Spicy Rice', sans-serif;
+
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.play-now:hover,
+.goated-mode:hover {
+    color: #ffda44;
+}
+
+.small-image {
+    width: 100px; /* Adjust the size of the small image */
+    height: 100px;
+    border-radius: 25%;
+}
+
+/* Large Fruit Images with Pulse Effect */
+.fruit-left, .fruit-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1; /* Keep it behind the header and content */
+    animation: pulse 3s ease-in-out infinite; /* Apply pulsing animation */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fruit-left {
+    top: 150px;
+    left: -250px;
+    width: 600px; /* 3x bigger than previous 400px */
+    height: 600px; /* 3x bigger than previous 400px */
+    background-image: url('images/watermelon.png'); /* Path to watermelon image */
+}
+
+.fruit-right {
+    right: -250px;
+    top: 650px;
+    width: 600px; /* 3x bigger than previous 400px */
+    height: 600px; /* 3x bigger than previous 400px */
+    background-image: url('images/banana.png'); /* Path to banana image */
+}
+
+/* For Bottom Images - Similar to fruit-left and fruit-right at the top */
+.rollete-left, .goat-right {
+    position: absolute;
+    bottom: 0; /* Position them at the bottom of the page */
+    width: 15%; /* Adjust width as needed (10% might be too small depending on the image) */
+    height: auto;
+    z-index: 1; /* Ensure images stay above background and other content */
+    background-size: cover;
+
+}
+
+/* Left Image */
+.rollete-left {
+    left: 0; /* Align to the left of the screen */
+    background-image: url('images/rollete.png'); /* Image URL for the left side */
+    background-size: contain; /* Ensure the image scales properly */
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: pulse 3s ease-in-out infinite; /* Apply pulsing animation */
+    width: 800px !important; /* 3x bigger than previous 400px */
+    height: 800px !important; /* 3x bigger than previous 400px */
+}
+
+/* Right Image */
+.goat-right {
+    top: 0; /* Align to the right of the screen */
+    right: 0;
+    background-image: url('images/goat.png'); /* Image URL for the right side */
+    background-size: contain; /* Ensure the image scales properly */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 600px !important; /* 3x bigger than previous 400px */
+    height: 600px !important; /* 3x bigger than previous 400px */
+}
+
+/* Pulse animation for the fruit images */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Slightly bigger */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.header .title {
+    font-size: 2.5rem;
+
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-top: 50px; /* Adjusted for a bit more space */
+    width: 100%;
+    z-index: 1; /* Ensure it stays above the fruit images */
+    position: relative; /* Make sure it's positioned correctly */
+}
+
+.title {
+    font-family: 'Spicy Rice', sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* Top 3 Cards Section */
+.leaderboard {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Increased gap between cards */
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Ensure max width for large screens */
+    padding: 0 20px; /* Padding for mobile responsiveness */
+    margin-top: 150px;
+}
+
+/* Top 3 Cards */
+.top-three {
+    display: flex;
+    gap: 50px; /* Increased gap between cards */
+    width: 100%;
+    max-width: 1200px; /* Prevent it from stretching too wide */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allows cards to stack vertically on smaller screens */
+    justify-content: center; /* Centers the cards horizontally */
+}
+
+/* Adjust Card Height to Make it More Compact */
+.card {
+    width: 300px;
+    height: 460px; /* Slightly taller to accommodate text */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10%;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(255, 221, 30, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 50px; /* Adds space between card and top section */
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Styling for each card (1st, 2nd, 3rd) */
+.first {
+    background-image: url('images/gold.png');
+    color: rgb(240, 193, 62);
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 700;
+    border: 2px solid #ffe347; /* Golden border for the first card */
+}
+
+.second {
+    background-image: url('images/silver.png');
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 700;
+    border: 2px solid #ef3131; /* Red border for the second card */
+    top: 60px;
+    right:40px;
+
+}
+
+.third {
+    background-image: url('images/bronze.png');    
+    font-weight: 700;
+    font-family: 'Archivo Black', sans-serif;
+    border: 2px solid #4f6cc1; /* Blue border for the third card */
+    top: 60px;
+    left: 40px;
+}
+
+/* Adjust grade badge colors */
+.first .grade-badge {
+    border: 2px solid #FFD700; /* Gold border for the grade badge */
+    background-color: #1E1E1E; /* Dark background for readability */
+    color: #ffffff; /* Golden text color */
+    text-shadow: 1px 1px #ffbf00;
+    font-family: 'Spicy Rice', sans-serif;
+
+
+}
+
+.second .grade-badge {
+    border: 2px solid #c21718; /* Red border for the grade badge */
+    background-color: #1E1E1E;
+    color: #ffffff; /* Red text color */
+    text-shadow: 1px 1px #c21718;
+    font-family: 'Spicy Rice', sans-serif;
+
+
+}
+
+.third .grade-badge {
+    border: 4px solid #3c5294; /* Blue border for the grade badge */
+    background-color: #1E1E1E;
+    color: #ffffff; /* Blue text color */
+    text-shadow: 1px 1px #3c5294;
+    font-family: 'Spicy Rice', sans-serif;
+
+
+}
+
+.grade-badge {
+    position: absolute;
+    top: -80px; /* Adjust vertical placement of the circle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Fixing the Username and Circle Badge Issue */
+.card .text-container {
+    background-color: rgba(0, 0, 0, 0.423); /* Solid background to make text readable */
+    border-radius: 8px;
+    padding: -10px;
+}
+
+
+/* Wagered Label and Wager Value Spacing (Reduce distance between them) */
+.wagered-label {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 5px; /* Reduced space between label and wagered value */
+}
+
+.wager-value {
+    font-size: 1.5rem; /* Smaller font size for wagered value */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Bonus Label and Prize Spacing (Fix the gap between them) */
+.bonus-label {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px; /* Adjust the space between bonus label and prize value */
+}
+
+.bonus {
+    font-size: 3rem; /* Larger size for bonus value */
+    font-weight: bold;
+    color: #ffffff; /* Gold color for bonus */
+    text-shadow: 1px 2px #ff0000;
+    font-weight: 700;
+    font-family: 'Spicy Rice', sans-serif;
+
+}
+
+.username {
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 15px; /* Adds space from the other elements */
+    
+}
+        /* Container for the countdown */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between the squares */
+            margin: 30px 0;
+        }
+
+        /* Countdown Squares */
+        .countdown-square {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 120px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* The time values (Days, Hours, etc.) */
+        .countdown-value {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        /* Titles (Days, Hours, etc.) */
+        .countdown-label {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Countdown timer styling */
+        .countdown-timer {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff5733;
+        }
+/* Description Section */
+.description {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.description p {
+    font-size: 1rem;
+    color: #f8f8f8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styling for the entire leaderboard container */
+.leaderboard-container {
+    width: 80%;
+    margin: 30px auto;
+    background: rgba(0, 0, 0, 0.467); /* Black transparent background */
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6); /* Inner shadow effect */
+    margin-bottom: 400px;
+}
+
+/* Styling for the title row */
+.title-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid white;
+    font-family: 'Spicy Rice', sans-serif;
+
+
+}
+
+/* Styling for the individual title cells */
+.title-cell {
+    text-align: center;
+}
+
+/* Styling for the user rows */
+.user-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.653); /* Slightly darker background for user rows */
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.6); /* Inner shadow effect */
+    font-family: 'Spicy Rice', sans-serif;
+
+    
+}
+
+.user-row:hover {
+    background-color: rgba(0, 0, 0, 0.95); /* Darker when hovered */
+    cursor: pointer;
+    transform: scale(1.02);
+
+}
+/* Styling for individual user details */
+.user-place,
+.user-username,
+.user-wagered,
+.user-prize {
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Optional hover effect for user rows */
+.user-row:hover {
+    background-color: rgba(0, 0, 0, 0.95); /* Darker when hovered */
+    cursor: pointer;
+}
+
+        /* Footer Styling */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #3333333c;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-family: 'Roboto', sans-serif;
+            z-index: 1; /* Ensure it stays above the images */
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Media Queries */
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Adjust top links */
+    .top-links {
+        gap: 30px;
+    }
+
+    .top-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Title */
+    .title {
+        font-size: 2rem;
+    }
+
+    /* Adjust Card Size */
+    .card {
+        width: 250px;
+        height: 350px;
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin-top: 20px; /* Adjust margin for spacing between cards */
+    }
+
+    /* Card Content Adjustments */
+    .card h3 {
+        font-size: 1.5rem; /* Smaller font size for the card title */
+    }
+
+    .grade-badge {
+        width: 120px;
+        height: 120px;
+        font-size: 1.5rem; /* Smaller badge font size */
+    }
+
+    /* Adjust card hover effect */
+    .card:hover {
+        transform: scale(1.02); /* Smaller hover scale */
+    }
+
+    /* Countdown Adjustments */
+    .countdown-container {
+        margin-bottom: 20px;
+    }
+
+    /* Description Section */
+    .description p {
+        font-size: 0.9rem;
+        max-width: 600px;
+    }
+
+    /* Hide Images for Mobile */
+    .goat-right, .fruit-left, .fruit-right {
+        display: none;
+    }
+
+    /* Adjust Footer */
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    /* Adjust leaderboard layout */
+    .leaderboard {
+        padding: 0 10px;
+    }
+
+    /* Wagered Label and Wager Value Spacing (Reduce distance between them) */
+    .wagered-label {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 5px; /* Reduced space between label and wagered value */
+    }
+
+    .wager-value {
+        font-size: 1rem; /* Smaller font size for wagered value */
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    /* Bonus Label and Prize Spacing (Fix the gap between them) */
+    .bonus-label {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 10px; /* Adjust the space between bonus label and prize value */
+    }
+
+    .bonus {
+        font-size: 1.2rem; /* Larger size for bonus value */
+        font-weight: bold;
+        color: #ffffff; /* Gold color for bonus */
+        text-shadow: 1px 2px #ff0000;
+        font-weight: 700;
+        font-family: 'Spicy Rice', sans-serif;
+
+    }
+
+    .username {
+        font-weight: bold;
+        color: #ffffff;
+        margin-top: 15px; /* Adds space from the other elements */
+        
+    }
+
+
+
+    .second {
+        background-image: url('images/silver.png');
+        font-family: 'Archivo Black', sans-serif;
+        font-weight: 700;
+        border: 2px solid #ef3131; /* Red border for the second card */
+        top: 0px;
+        right:0px;
+
+    }
+
+    .third {
+        background-image: url('images/bronze.png');    
+        font-weight: 700;
+        font-family: 'Archivo Black', sans-serif;
+        border: 2px solid #4f6cc1; /* Blue border for the third card */
+        top: 0px;
+        left: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust top links */
+    .top-links {
+        gap: 15px;
+    }
+
+    .top-links a {
+        font-size: 1rem;
+    }
+
+    /* Title */
+    .title {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust Card Size */
+    /* Adjust Card Size */
+    .card {
+        width: 80%;
+        height: 400px;
+        padding: 10px; /* Even more compact padding */
+        margin-top: 15px; /* Adjust margin for tighter spacing */
+    }
+
+    /* Card Content Adjustments */
+    .card h3 {
+        font-size: 1.2rem; /* Further smaller font size for titles */
+    }
+
+    .grade-badge {
+        width: 150px;
+        height: 150px;
+        font-size: 2.5rem; /* Smaller font size for badges */
+    }
+
+    /* Adjust card hover effect */
+    .card:hover {
+        transform: scale(1.03); /* Slightly increased hover scale */
+    }
+
+    /* Countdown Adjustments */
+    .countdown-container {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust Footer */
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    /* Hide Images for Mobile */
+    .goat-right, .fruit-left, .fruit-right {
+        display: none;
+    }
+
+
+    /* Wagered Label and Wager Value Spacing (Reduce distance between them) */
+    .wagered-label {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 5px; /* Reduced space between label and wagered value */
+    }
+
+    .wager-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    /* Bonus Label and Prize Spacing (Fix the gap between them) */
+    .bonus-label {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 10px; /* Adjust the space between bonus label and prize value */
+    }
+
+    .bonus {
+        font-size: 2rem; /* Larger size for bonus value */
+        font-weight: bold;
+        color: #ffffff; /* Gold color for bonus */
+        text-shadow: 1px 2px #ff0000;
+        font-weight: 700;
+        font-family: 'Spicy Rice', sans-serif;
+
+    }
+
+    .username {
+        font-weight: bold;
+        color: #ffffff;
+        margin-top: 15px; /* Adds space from the other elements */
+        
+    }
+
+
+}
