@@ -502,7 +502,7 @@ body {
     .grade-badge {
         width: 140px;
         height: 140px;
-        font-size: 1.5rem; /* Smaller badge font size */
+        font-size: 3rem; /* Smaller badge font size */
     }
 
     /* Adjust card hover effect */
