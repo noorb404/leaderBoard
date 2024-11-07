@@ -466,6 +466,9 @@ body {
             text-decoration: underline;
         }
 
+        .mobile {
+            display: none;
+        }
 /* Media Queries */
 /* Media Queries */
 @media (max-width: 768px) {
@@ -480,12 +483,12 @@ body {
 
     /* Title */
     .title {
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
 
     /* Adjust Card Size */
     .card {
-        width: 250px;
+        width: 280px;
         height: 350px;
         padding: 15px; /* Adjust padding for smaller screens */
         margin-top: 20px; /* Adjust margin for spacing between cards */
@@ -497,8 +500,8 @@ body {
     }
 
     .grade-badge {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         font-size: 1.5rem; /* Smaller badge font size */
     }
 
@@ -519,7 +522,7 @@ body {
     }
 
     /* Hide Images for Mobile */
-    .goat-right, .fruit-left, .fruit-right {
+    .goat-right, .fruit-right {
         display: none;
     }
 
@@ -590,100 +593,28 @@ body {
         top: 0px;
         left: 0px;
     }
-}
 
-@media (max-width: 480px) {
-    /* Adjust top links */
-    .top-links {
-        gap: 15px;
+    /* Left Image */
+    .rollete-left {
+        bottom: 150px !important;
+        width: 400px !important; /* 3x bigger than previous 400px */
+        height: 400px !important; /* 3x bigger than previous 400px */
     }
-
-    .top-links a {
-        font-size: 1rem;
+        /* Left Image */
+    .fruit-left {
+        left: -190px;
+        width: 400px !important; /* 3x bigger than previous 400px */
+        height: 400px !important; /* 3x bigger than previous 400px */
     }
-
-    /* Title */
-    .title {
-        font-size: 1.2rem;
+    .mobile {
+        display: block;
     }
-
-    /* Adjust Card Size */
-    /* Adjust Card Size */
-    .card {
-        width: 80%;
-        height: 400px;
-        padding: 10px; /* Even more compact padding */
-        margin-top: 15px; /* Adjust margin for tighter spacing */
-    }
-
-    /* Card Content Adjustments */
-    .card h3 {
-        font-size: 1.2rem; /* Further smaller font size for titles */
-    }
-
-    .grade-badge {
-        width: 150px;
-        height: 150px;
-        font-size: 2.5rem; /* Smaller font size for badges */
-    }
-
-    /* Adjust card hover effect */
-    .card:hover {
-        transform: scale(1.03); /* Slightly increased hover scale */
-    }
-
-    /* Countdown Adjustments */
-    .countdown-container {
-        margin-bottom: 10px;
-    }
-
-    /* Adjust Footer */
-    .footer {
-        font-size: 0.8rem;
-    }
-
-    /* Hide Images for Mobile */
-    .goat-right, .fruit-left, .fruit-right {
+    .desktop {
         display: none;
     }
-
-
-    /* Wagered Label and Wager Value Spacing (Reduce distance between them) */
-    .wagered-label {
-        font-size: 1.5rem;
-        color: #fff;
-        margin-bottom: 5px; /* Reduced space between label and wagered value */
+    .small-image {
+        width: 70px; /* Adjust the size of the small image */
+        height: 70px;
+        border-radius: 25%;
     }
-
-    .wager-value {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #ffffff;
-    }
-
-    /* Bonus Label and Prize Spacing (Fix the gap between them) */
-    .bonus-label {
-        font-size: 1.5rem;
-        color: #fff;
-        margin-bottom: 10px; /* Adjust the space between bonus label and prize value */
-    }
-
-    .bonus {
-        font-size: 2rem; /* Larger size for bonus value */
-        font-weight: bold;
-        color: #ffffff; /* Gold color for bonus */
-        text-shadow: 1px 2px #ff0000;
-        font-weight: 700;
-        font-family: 'Spicy Rice', sans-serif;
-
-    }
-
-    .username {
-        font-weight: bold;
-        color: #ffffff;
-        margin-top: 15px; /* Adds space from the other elements */
-        
-    }
-
-
 }
