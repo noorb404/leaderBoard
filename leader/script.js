@@ -81,7 +81,7 @@ async function fetchLeaderboardData() {
     try {
         console.log("Fetching leaderboard data...");
         
-        const response = await fetch('http://localhost:3000/leaderboard', {
+        const response = await fetch('https://leaderboard-proxy.onrender.com/leaderboard', {
             method: 'GET',
         });
 
