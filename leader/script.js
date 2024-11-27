@@ -76,6 +76,19 @@ function getPrize(rank) {
     }
 }
 
+// Function to get the correct suffix for the rank
+function getRankSuffix(rank) {
+    if (rank === 0) {
+        return 'st'; // 1st
+    } else if (rank === 1) {
+        return 'nd'; // 2nd
+    } else if (rank === 2) {
+        return 'rd'; // 3rd
+    } else {
+        return 'th'; // For 4th, 5th, 6th, etc.
+    }
+}
+
 // Fetch leaderboard data from your local server (which proxies the request)
 async function fetchLeaderboardData() {
     try {
@@ -161,9 +174,13 @@ function renderLeaderboard(players) {
 
         // Safely access the wagered.this_month value
         const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
+
+        // Get the rank suffix for the player
+        const rankSuffix = getRankSuffix(index);
+
         return `
             <div class="card ${index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}">
-                <div class="grade-badge">${index + 1}st</div>
+                <div class="grade-badge">${index + 1}${rankSuffix}</div>
                 <div class="text-container">
                     <h3 class="username">${maskedUsername}</h3> <!-- Display masked username -->
                 </div>
