@@ -16,28 +16,28 @@
         /* Fruit images at the bottom */
         .rollete-left, .goat-right {
             position: absolute;
-            bottom: 0; /* Position them at the bottom of the page */
-            width: 10%; /* Control the size of the images */
+            bottom: 0;
+            width: 10%;
             height: auto;
-            z-index: -1; /* Ensure images stay behind content */
+            z-index: -1;
         }
 
         .rollete-left {
-            left: 0; /* Align to the left of the screen */
-            background-image: url('images/rollete.png'); /* Image URL for the left side */
-            background-size: contain; /* Ensure the image scales properly */
+            left: 0;
+            background-image: url('images/rollete.png');
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.5; /* Add transparency for visual effect */
+            opacity: 0.5;
         }
 
         .goat-right {
-            right: 0; /* Align to the right of the screen */
-            background-image: url('images/goat.png'); /* Image URL for the right side */
-            background-size: contain; /* Ensure the image scales properly */
+            right: 0;
+            background-image: url('images/goat.png');
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.5; /* Add transparency for visual effect */
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -55,118 +55,25 @@
 
     <!-- Headline Section -->
     <header class="header">
-        <h1 class="title">2,000$ MONTHLY WAGER LEADERBOARD</h1>
+        <h1 class="title">MONTHLY WAGER LEADERBOARD</h1>
     </header>
 
     <div class="fruit-right"></div>
 
-  
     <!-- Mobile Order -->
     <div class="leaderboard mobile">
-        <div class="top-three">
-            <!-- 1st Place Card (Mobile First) -->
-            <div class="card first">
-                <div class="grade-badge">1st</div>
-                <div class="text-container">
-                    <h3 class="username">RUE****SDW</h3>
-                </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value" id="wager1">$190,000</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus" id="bonus1">$1,000</p>
-                </div>
-            </div>
-
-            <!-- 2nd Place Card -->
-            <div class="card second">
-                <div class="grade-badge">2nd</div>
-                <div class="text-container">
-                    <h3 class="username">ASC***GR</h3>
-                </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value" id="wager2">$119,500</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus" id="bonus2">$500</p>
-                </div>
-            </div>
-
-            <!-- 3rd Place Card -->
-            <div class="card third">
-                <div class="grade-badge">3rd</div>
-                <div class="text-container">
-                    <h3 class="username">GOS***SW</h3>
-                </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value" id="wager3">$79,000</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus" id="bonus3">$250</p>
-                </div>
-            </div>
+        <!-- Dynamic Leaderboard for Mobile (1st, 2nd, 3rd places) -->
+        <div class="top-three"  id="top-three-mobile">
+            <!-- Dynamic Cards for top 3 players -->
         </div>
     </div>
 
     <!-- Desktop Order -->
-    <div class="leaderboard desktop">
-        <div class="top-three">
-            <!-- 2nd Place Card -->
-            <div class="card second">
-                <div class="grade-badge">2nd</div>
-                <div class="text-container">
-                    <h3 class="username">ASC***GR</h3>
-                </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value" id="wager2">$119,500</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus" id="bonus2">$500</p>
-                </div>
-            </div>
-
-            <!-- 1st Place Card -->
-            <div class="card first">
-                <div class="grade-badge">1st</div>
-                <div class="text-container">
-                    <h3 class="username">RUE****SDW</h3>
-                </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value" id="wager1">$190,000</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus" id="bonus1">$1,000</p>
-                </div>
-            </div>
-
-            <!-- 3rd Place Card -->
-            <div class="card third">
-                <div class="grade-badge">3rd</div>
-                <div class="text-container">
-                    <h3 class="username">GOS***SW</h3>
-                </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value" id="wager3">$79,000</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus" id="bonus3">$250</p>
-                </div>
-            </div>
+    <div class="leaderboard desktop" >
+        <div class="top-three" id="top-three-desktop">
+            <!-- Dynamic Cards for top 3 players -->
         </div>
     </div>
-
 
     <!-- Countdown Timer Section -->
     <div class="countdown-container">
@@ -188,90 +95,21 @@
         </div>
     </div>
 
-    <!-- Description Section -->
-    <div class="description">
-        <p>Welcome to the Goated Monthly Leaderboard! The top players who wager the most this month will be rewarded with exclusive bonuses. Are you ready to claim the top spot?</p>
-    </div>
-
     <!-- Rest of Leaderboard (Users 4-10) -->
-    <div class="leaderboard-container">
-        <!-- Title Row -->
-        <div class="title-row">
-            <div class="title-cell">Place</div>
-            <div class="title-cell">Username</div>
-            <div class="title-cell">Wagered</div>
-            <div class="title-cell">Prize</div>
-        </div>
-
-        <!-- User 4 -->
-        <div class="user-row">
-            <div class="user-place">4th</div>
-            <div class="user-username">TOS***WW</div>
-            <div class="user-wagered">$48,000</div>
-            <div class="user-prize">$125</div>
-        </div>
-
-        <!-- User 5 -->
-        <div class="user-row">
-            <div class="user-place">5th</div>
-            <div class="user-username">G2A***SR</div>
-            <div class="user-wagered">$37,800</div>
-            <div class="user-prize">$125</div>
-        </div>
-
-        <!-- User 6 -->
-        <div class="user-row">
-            <div class="user-place">6th</div>
-            <div class="user-username">WET***RT</div>
-            <div class="user-wagered">$37,500</div>
-            <div class="user-prize">$125</div>
-        </div>
-
-        <!-- User 7 -->
-        <div class="user-row">
-            <div class="user-place">7th</div>
-            <div class="user-username">24A***SQ</div>
-            <div class="user-wagered">$27,200</div>
-            <div class="user-prize">$125</div>
-        </div>
-
-        <!-- User 8 -->
-        <div class="user-row">
-            <div class="user-place">8th</div>
-            <div class="user-username">1SD***AW</div>
-            <div class="user-wagered">$17,100</div>
-            <div class="user-prize">$125</div>
-        </div>
-
-        <!-- User 9 -->
-        <div class="user-row">
-            <div class="user-place">9th</div>
-            <div class="user-username">RES***MR</div>
-            <div class="user-wagered">$12,000</div>
-            <div class="user-prize">$125</div>
-        </div>
-
-        <!-- User 10 -->
-        <div class="user-row">
-            <div class="user-place">10th</div>
-            <div class="user-username">GSS***SA</div>
-            <div class="user-wagered">$6,900</div>
-            <div class="user-prize">$125</div>
-        </div>
+    <div class="leaderboard-container" id="leaderboard-container">
+        <!-- Dynamic Rows for 4th to 10th users will be injected here -->
     </div>
 
     <!-- Fruit images at the bottom -->
-    <div >
+    <div>
         <img src="images/rollete.png" class="rollete-left">
-
         <img src="images/goat.png" class="goat-right">
     </div>
 
-
+    <!-- Footer -->
     <div class="footer">
         <p>Be Gamble Aware. <a href="https://www.begambleaware.org" target="_blank">Learn more</a></p>
     </div>
-
 
     <!-- External JavaScript File -->
     <script src="script.js"></script>
