@@ -59,6 +59,22 @@ function maskUsername(username) {
     return `${firstPart}**${lastPart}`;
 }
 
+// Function to get ordinal suffix for a number
+function getOrdinalSuffix(number) {
+    const j = number % 10;
+    const k = number % 100;
+    if (j === 1 && k !== 11) {
+        return number + 'st';
+    }
+    if (j === 2 && k !== 12) {
+        return number + 'nd';
+    }
+    if (j === 3 && k !== 13) {
+        return number + 'rd';
+    }
+    return number + 'th';
+}
+
 // Prize distribution based on rank (total prize pool: $600)
 function getPrize(rank) {
     switch(rank) {
@@ -163,7 +179,7 @@ function renderLeaderboard(players) {
         const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
         return `
             <div class="card ${index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}">
-                <div class="grade-badge">${index + 1}st</div>
+                <div class="grade-badge">${getOrdinalSuffix(index + 1)}</div>
                 <div class="text-container">
                     <h3 class="username">${maskedUsername}</h3> <!-- Display masked username -->
                 </div>
@@ -195,7 +211,7 @@ function renderLeaderboard(players) {
         const prize = getPrize(index + 3); // Get prize for 4th to 10th place (index + 3)
         const rowHTML = `
             <div class="user-row">
-                <div class="user-place">${index + 4}th</div>
+                <div class="user-place">${getOrdinalSuffix(index + 4)}</div>
                 <div class="user-username">${maskUsername(player.name)}</div> <!-- Display masked username -->
                 <div class="user-wagered">${formatCurrency(wageredThisMonth)}</div>
                 <div class="user-prize">${formatCurrency(prize)}</div> <!-- Display prize -->
