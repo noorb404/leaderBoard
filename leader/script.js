@@ -75,22 +75,23 @@ function getOrdinalSuffix(number) {
     return number + 'th';
 }
 
-// Prize distribution based on rank (total prize pool: $600)
+// Prize distribution based on rank (total prize pool: $1000)
 function getPrize(rank) {
     switch(rank) {
-        case 0: return 200; // 1st place gets $200
-        case 1: return 150; // 2nd place gets $150
-        case 2: return 110; // 3rd place gets $100
-        case 3: 
-        case 4: return 50;  // 4th and 5th place gets $50
+        case 0: return 500;  // 1st place gets $500
+        case 1: return 250;  // 2nd place gets $250
+        case 2: return 125;  // 3rd place gets $125
+        case 3: return 50;   // 4th place gets $50
+        case 4: 
         case 5: 
-        case 6:
-        case 7:
-        case 8:
-        case 9: return 20;  // 6th to 10th place gets $20 each
+        case 6: 
+        case 7: 
+        case 8: 
+        case 9: return 25;  // 5th to 10th place gets $25 each
         default: return 0;   // For any other case, no prize (shouldn't happen)
     }
 }
+
 
 // Fetch leaderboard data from your local server (which proxies the request)
 async function fetchLeaderboardData() {
