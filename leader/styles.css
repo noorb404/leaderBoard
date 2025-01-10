@@ -61,14 +61,14 @@ body {
 
 .fruit-left {
     top: 150px;
-    left: -250px;
+    left: -150px;
     width: 600px; /* 3x bigger than previous 400px */
     height: 600px; /* 3x bigger than previous 400px */
     background-image: url('images/watermelon.png'); /* Path to watermelon image */
 }
 
 .fruit-right {
-    right: -250px;
+    right: -200px;
     top: 650px;
     width: 600px; /* 3x bigger than previous 400px */
     height: 600px; /* 3x bigger than previous 400px */
