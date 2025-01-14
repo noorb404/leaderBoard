@@ -176,8 +176,12 @@ function renderLeaderboard(players) {
         // Get the prize for the player based on their rank
         const prize = getPrize(index);
 
-        // Safely access the wagered.this_month value
-        const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
+        // Adjust wager for Barti2k33 (subtract 240k)
+        let wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
+        if (player.name === 'Barti2k33') {
+            wageredThisMonth -= 240000;  // Subtract 240k if the player is Barti2k33
+        }
+
         return `
             <div class="card ${index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}">
                 <div class="grade-badge">${getOrdinalSuffix(index + 1)}</div>
@@ -208,7 +212,10 @@ function renderLeaderboard(players) {
 
     // Render 4th to 10th players dynamically in the rest of the leaderboard
     players.slice(3, 7).forEach((player, index) => {
-        const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
+        let wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
+        if (player.name === 'Barti2k33') {
+            wageredThisMonth -= 240000;  // Subtract 240k if the player is Barti2k33
+        }
         const prize = getPrize(index + 3); // Get prize for 4th to 10th place (index + 3)
         const rowHTML = `
             <div class="user-row">
