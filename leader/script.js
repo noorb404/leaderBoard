@@ -121,6 +121,9 @@ async function fetchLeaderboardData() {
             // Remove "goattedmode" user if present in the leaderboard
             players = players.filter(player => player.name.toLowerCase() !== 'goattedmode');
 
+            // Adjust the wager for Barti2k33 and re-calculate his position
+            players = adjustWagerForBarti2k33(players); 
+
             // Render leaderboard
             renderLeaderboard(players); // Pass the player data to render
         } else {
@@ -129,6 +132,26 @@ async function fetchLeaderboardData() {
     } catch (error) {
         console.error('Error fetching leaderboard data:', error); // Log any errors
     }
+}
+
+// Function to adjust Barti2k33's wager and re-sort the leaderboard
+function adjustWagerForBarti2k33(players) {
+    // Subtract 240,000 from Barti2k33's wager and recalculate his position
+    players = players.map(player => {
+        if (player.name === 'Barti2k33') {
+            player.wagered.this_month -= 240000;
+        }
+        return player;
+    });
+
+    // Re-sort the players based on the adjusted wager
+    players.sort((a, b) => {
+        const wageredA = a.wagered && a.wagered.this_month ? a.wagered.this_month : 0;
+        const wageredB = b.wagered && b.wagered.this_month ? b.wagered.this_month : 0;
+        return wageredB - wageredA; // Sort in descending order
+    });
+
+    return players;
 }
 
 // Function to render leaderboard
@@ -156,13 +179,6 @@ function renderLeaderboard(players) {
     desktopContainer.innerHTML = '';
     leaderboardContainer.innerHTML = '';
 
-    // Safely sort players by 'this_month' wagered amount in descending order
-    players.sort((a, b) => {
-        const wageredA = a.wagered && a.wagered.this_month ? a.wagered.this_month : 0;
-        const wageredB = b.wagered && b.wagered.this_month ? b.wagered.this_month : 0;
-        return wageredB - wageredA;
-    });
-
     // Function to format the wagered amount with commas and dollar sign
     function formatCurrency(amount) {
         return '$' + amount.toLocaleString(); // Format with commas and prepend $ symbol
@@ -176,12 +192,8 @@ function renderLeaderboard(players) {
         // Get the prize for the player based on their rank
         const prize = getPrize(index);
 
-        // Adjust wager for Barti2k33 (subtract 240k)
-        let wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
-        if (player.name === 'Barti2k33') {
-            wageredThisMonth -= 240000;  // Subtract 240k if the player is Barti2k33
-        }
-
+        // Safely access the wagered.this_month value
+        const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
         return `
             <div class="card ${index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}">
                 <div class="grade-badge">${getOrdinalSuffix(index + 1)}</div>
@@ -212,10 +224,7 @@ function renderLeaderboard(players) {
 
     // Render 4th to 10th players dynamically in the rest of the leaderboard
     players.slice(3, 7).forEach((player, index) => {
-        let wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
-        if (player.name === 'Barti2k33') {
-            wageredThisMonth -= 240000;  // Subtract 240k if the player is Barti2k33
-        }
+        const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
         const prize = getPrize(index + 3); // Get prize for 4th to 10th place (index + 3)
         const rowHTML = `
             <div class="user-row">
