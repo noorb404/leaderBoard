@@ -104,7 +104,7 @@ async function fetchLeaderboardData() {
 
         // Check if the response is OK (status 200)
         if (!response.ok) {
-            throw new Error(HTTP error! Status: ${response.status});
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
@@ -136,7 +136,6 @@ async function fetchLeaderboardData() {
 
 // Function to adjust Barti2k33's wager and re-sort the leaderboard
 function adjustWagerForBarti2k33(players) {
-
     // Re-sort the players based on the adjusted wager
     players.sort((a, b) => {
         const wageredA = a.wagered && a.wagered.this_month ? a.wagered.this_month : 0;
@@ -187,7 +186,7 @@ function renderLeaderboard(players) {
 
         // Safely access the wagered.this_month value
         const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
-        return 
+        return `
             <div class="card ${index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}">
                 <div class="grade-badge">${getOrdinalSuffix(index + 1)}</div>
                 <div class="text-container">
@@ -202,7 +201,7 @@ function renderLeaderboard(players) {
                     <p class="bonus">${formatCurrency(prize)}</p> <!-- Display the prize for the player -->
                 </div>
             </div>
-        ;
+        `;
     };
 
     // For Mobile - first player on top, then second and third
@@ -219,14 +218,14 @@ function renderLeaderboard(players) {
     players.slice(3, 7).forEach((player, index) => {
         const wageredThisMonth = player.wagered && player.wagered.this_month ? player.wagered.this_month : 0;
         const prize = getPrize(index + 3); // Get prize for 4th to 10th place (index + 3)
-        const rowHTML = 
+        const rowHTML = `
             <div class="user-row">
                 <div class="user-place">${getOrdinalSuffix(index + 4)}</div>
                 <div class="user-username">${maskUsername(player.name)}</div> <!-- Display masked username -->
                 <div class="user-wagered">${formatCurrency(wageredThisMonth)}</div>
                 <div class="user-prize">${formatCurrency(prize)}</div> <!-- Display prize -->
             </div>
-        ;
+        `;
         leaderboardContainer.innerHTML += rowHTML;
     });
 }
