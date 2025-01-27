@@ -136,13 +136,6 @@ async function fetchLeaderboardData() {
 
 // Function to adjust Barti2k33's wager and re-sort the leaderboard
 function adjustWagerForBarti2k33(players) {
-    // Subtract 240,000 from Barti2k33's wager and recalculate his position
-    players = players.map(player => {
-        if (player.name === 'Barti2k33') {
-            player.wagered.this_month = player.wagered.this_month;
-        }
-        return player;
-    });
 
     // Re-sort the players based on the adjusted wager
     players.sort((a, b) => {
