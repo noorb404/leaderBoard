@@ -56,7 +56,7 @@ function maskUsername(username) {
     const firstPart = username.slice(0, 3);
     const lastPart = username.slice(-3);
     
-    return ${firstPart}**${lastPart};
+    return `${firstPart}**${lastPart}`;
 }
 
 // Function to get ordinal suffix for a number
