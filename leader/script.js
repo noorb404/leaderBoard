@@ -55,7 +55,7 @@ function getOrdinalSuffix(number) {
 
 // Prize distribution for top 5 ranks
 function getPrize(rank) {
-    const prizes = [500, 250, 125, 50, 25]; // Top 5 prize distribution
+    const prizes = [200, 100, 50, 30, 20]; // Top 5 prize distribution
     return prizes[rank] || 0; // Return prize if rank exists, otherwise 0
 }
 
