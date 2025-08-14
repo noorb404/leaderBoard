@@ -1,14 +1,13 @@
-// Function to get next Monday's first date (for countdown)
+// Countdown functions remain unchanged
 function getNextMonday() {
     const now = new Date();
-    const dayOfWeek = now.getDay(); // 0 (Sunday) to 6 (Saturday)
-    const daysUntilMonday = (dayOfWeek === 0) ? 1 : 8 - dayOfWeek; // Days left until next Monday
+    const dayOfWeek = now.getDay();
+    const daysUntilMonday = (dayOfWeek === 0) ? 1 : 8 - dayOfWeek;
     now.setDate(now.getDate() + daysUntilMonday);
     now.setHours(0, 0, 0, 0);
     return now;
 }
 
-// Update the countdown every second
 function updateCountdown() {
     const now = new Date();
     const nextMonday = getNextMonday();
@@ -33,19 +32,14 @@ function updateCountdown() {
     document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
 }
 
-// Update countdown every second
 setInterval(updateCountdown, 1000);
-updateCountdown(); // Initial run
+updateCountdown();
 
-// Function to mask the middle part of the username
+// Utility functions
 function maskUsername(username) {
-    if (username.length <= 6) {
-        return username[0] + '**' + username[username.length - 1];
-    }
-    return `${username.slice(0, 3)}**${username.slice(-3)}`;
+    return `**${username.slice(-3)}`;
 }
 
-// Function to get ordinal suffix for a number
 function getOrdinalSuffix(number) {
     if (number % 10 === 1 && number % 100 !== 11) return number + 'st';
     if (number % 10 === 2 && number % 100 !== 12) return number + 'nd';
@@ -53,129 +47,107 @@ function getOrdinalSuffix(number) {
     return number + 'th';
 }
 
-// Prize distribution for top 5 ranks
 function getPrize(rank) {
-    const prizes = [200, 100, 50, 30, 20]; // Top 5 prize distribution
-    return prizes[rank] || 0; // Return prize if rank exists, otherwise 0
+    const prizes = [1000, 600, 400, 300, 200,150,125,100,75,50];
+    return prizes[rank] || 0;
 }
 
-// Fetch leaderboard data from local proxy server
-async function fetchLeaderboardData() {
-    try {
-        console.log("Fetching leaderboard data...");
-        
-        const response = await fetch('https://leaderboard-proxy.onrender.com/leaderboard');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log("API Response:", data);
-
-        if (data.success && Array.isArray(data.players)) {
-            let players = data.players.filter(player => player.name.toLowerCase() !== 'goattedmode');
-
-            // Adjust wager for Barti2k33 and re-sort leaderboard
-            players = adjustWagerForBarti2k33(players);
-            renderLeaderboard(players);
-        } else {
-            console.error('Invalid data format:', data);
-        }
-    } catch (error) {
-        console.error('Error fetching leaderboard data:', error);
-    }
-}
-
-// Function to adjust Barti2k33's wager and re-sort leaderboard
-function adjustWagerForBarti2k33(players) {
-    return players.sort((a, b) => (b.wagered?.this_week || 0) - (a.wagered?.this_week || 0));
-}
-
-// Function to format currency with commas and $
 function formatCurrency(amount) {
     return '$' + amount.toLocaleString();
 }
 
-// Function to render leaderboard
+// Dummy leaderboard data
+const dummyPlayers = [
+    { name: "PlayerOne", wagered: { this_week: 2540000 } },
+    { name: "SecondGuy", wagered: { this_week: 1420056 } },
+    { name: "ThirdPlace", wagered: { this_week: 925015 } },
+    { name: "FourthStar", wagered: { this_week: 350845 } },
+    { name: "ThirdPlace", wagered: { this_week: 230421 } },
+    { name: "FourthStar", wagered: { this_week: 120421 } },
+    { name: "ThirdPlace", wagered: { this_week: 110025 } },
+    { name: "FourthStar", wagered: { this_week: 90421 } },
+    { name: "FourthStar", wagered: { this_week: 67201 } },
+    { name: "FifthAce", wagered: { this_week: 45007 } }
+];
+// Render leaderboard dynamically
 function renderLeaderboard(players) {
-    if (!Array.isArray(players)) {
-        console.error("Expected an array, got:", players);
-        return;
-    }
-
-    console.log("Players Data in renderLeaderboard:", players);
-
     const mobileContainer = document.getElementById('top-three-mobile');
     const desktopContainer = document.getElementById('top-three-desktop');
     const leaderboardContainer = document.getElementById('leaderboard-container');
-
-    if (!mobileContainer || !desktopContainer || !leaderboardContainer) {
-        console.error('Leaderboard containers not found in the DOM!');
-        return;
-    }
 
     // Clear existing content
     mobileContainer.innerHTML = '';
     desktopContainer.innerHTML = '';
     leaderboardContainer.innerHTML = '';
 
-    // Function to generate player card HTML
+    // Insert the header row with titles
+    leaderboardContainer.innerHTML = `
+    <div class="leaderboard-container" id="leaderboard-container">
+        <div class="title-row">
+        <div>Place</div>
+        <div>Username</div>
+        <div>Wagered</div>
+        <div>Prize</div>
+        </div>
+        <!-- User rows dynamically added here -->
+    </div>
+    `;
+
+    // Function to generate the player cards for top 3
     const generatePlayerCard = (player, index) => {
-        const maskedUsername = maskUsername(player.name);
-        const prize = getPrize(index);
-        const wageredThisWeek = player.wagered?.this_week || 0;
+        const rankNumber = index + 1; // 1-based rank for badge
+        const medalImage = index < 3 ? `images/${rankNumber}.png` : null; // assuming medals are in /assets/
+
+        const badgeOrMedal = medalImage
+            ? `<img src="${medalImage}" alt="Medal" class="medal-img" />`
+            : `<div class="rank-badge">#${rankNumber}</div>`;
 
         return `
             <div class="card ${index === 0 ? 'first' : index === 1 ? 'second' : index === 2 ? 'third' : ''}">
-                <div class="grade-badge">${getOrdinalSuffix(index + 1)}</div>
-                <div class="text-container">
-                    <h3 class="username">${maskedUsername}</h3>
+                ${badgeOrMedal}
+                <div class="username">
+                    ${maskUsername(player.name)}
+                    <div class="username-underline"></div>
                 </div>
-                <p class="wagered-label">Wagered:</p>
-                <div class="text-container">
-                    <p class="wager-value">${formatCurrency(wageredThisWeek)}</p>
-                </div>
-                <p class="bonus-label">Prize:</p>
-                <div class="text-container">
-                    <p class="bonus">${formatCurrency(prize)}</p>
+                <div class="info-row">
+                    <div class="info-block">
+                        <div class="label gray-label">Wagered</div>
+                        <div class="value">${formatCurrency(player.wagered.this_week)}</div>
+                    </div>
+                    <div class="info-block prize-block">
+                        <div class="label gray-label">Prize</div>
+                        <div class="value">${formatCurrency(getPrize(index))}</div>
+                    </div>
                 </div>
             </div>
         `;
     };
 
-    // Display top 3 players on mobile
+    // Render top 3 players for mobile view
     players.slice(0, 3).forEach((player, index) => {
         mobileContainer.innerHTML += generatePlayerCard(player, index);
     });
 
-    // Display top 3 players on desktop (1st place in center)
+    // Render top 3 players for desktop view in center order
     desktopContainer.innerHTML += generatePlayerCard(players[1], 1);
     desktopContainer.innerHTML += generatePlayerCard(players[0], 0);
     desktopContainer.innerHTML += generatePlayerCard(players[2], 2);
 
-    // Render 4th and 5th players in the rest of the leaderboard
-    players.slice(3, 5).forEach((player, index) => {
-        const wageredThisWeek = player.wagered?.this_week || 0;
-        const prize = getPrize(index + 3);
+    // Render players ranked 4 to 10 in the leaderboard container
+    players.slice(3, 10).forEach((player, index) => {
         leaderboardContainer.innerHTML += `
             <div class="user-row">
                 <div class="user-place">${getOrdinalSuffix(index + 4)}</div>
                 <div class="user-username">${maskUsername(player.name)}</div>
-                <div class="user-wagered">${formatCurrency(wageredThisWeek)}</div>
-                <div class="user-prize">${formatCurrency(prize)}</div>
+                <div class="user-wagered">${formatCurrency(player.wagered.this_week)}</div>
+                <div class="user-prize">${formatCurrency(getPrize(index + 3))}</div>
             </div>
         `;
     });
 }
 
-// Fetch leaderboard data on page load
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Page loaded, fetching leaderboard data...");
-    fetchLeaderboardData();
-});
 
-// Debugging: Check if elements exist in DOM
-console.log(document.getElementById('top-three-mobile'));
-console.log(document.getElementById('top-three-desktop'));
-console.log(document.getElementById('leaderboard-container'));
+
+document.addEventListener("DOMContentLoaded", function() {
+    renderLeaderboard(dummyPlayers);
+});

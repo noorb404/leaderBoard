@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DKC Rewards</title>
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/webLogo.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="weekly.css">
+
+
+</head>
+<body>
+
+  <div class="top-links">
+    <div class="left-title">DKC x THRILL</div>
+  
+    <!-- Hamburger Button (visible on mobile only) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  
+    <!-- Mobile Menu (Toggle display on mobile only) -->
+    <div class="right-buttons" id="mobileMenu">
+      <a href="index.html" class="leaderboardBtn btn">Leaderboard</a>
+      <a href="weekly.html" class="weeklyBtn btn">Weekly Milestones</a>
+      <a href="milestones.html" class="milestoneBtn btn">VIP Transfer</a>
+      <a href="https://thrill.com/?r=DKS" class="btn signup">Sign Up On Thrill</a>
+    </div>
+  </div>
+
+    <header class="header">
+      <h1 class="title">WEEKLY MILESTONES</h1>
+    </header>
+
+    <!-- Headline Section -->
+    <div class="header2">
+      <div>Wager between <strong>Monday to Monday</strong> and earn guaranteed rewards based on your total weekly wager.</div>
+    </div>
+    <div class="header2">
+      <div>Your milestone progress resets every Monday — no opt-in needed, just play and earn!</div>
+    </div>
+
+    <div class="vip-milestones-container">
+      <div class="milestone-card">
+        <h3 class="target-label">$50,000 Wager</h3>
+        <p class="reward-value">$50</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$100,000 Wager</h3>
+        <p class="reward-value">$100</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$250,000 Wager</h3>
+        <p class="reward-value">$250</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$500,000 Wager</h3>
+        <p class="reward-value">$500</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$750,000 Wager</h3>
+        <p class="reward-value">$750</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$1,000,000 Wager</h3>
+        <p class="reward-value">$1,000</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$2,000,000 Wager</h3>
+        <p class="reward-value">$2,000</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$3,000,000 Wager</h3>
+        <p class="reward-value">$3,000</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$4,000,000 Wager</h3>
+        <p class="reward-value">$4,000</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+      <div class="milestone-card">
+        <h3 class="target-label">$5,000,000 Wager</h3>
+        <p class="reward-value">$5,000</p>
+        <p class="reward-label">Reward</p>
+        <button class="claim-btn">Claim Reward</button>
+      </div>
+    </div>
+    
+    
+
+<!-- Modal for Claiming -->
+<div id="claimModal" class="custom-modal">
+  <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Claim Your Reward</h2>
+      <p>To claim your VIP milestone reward, please contact our VIP affiliate host on Telegram.</p>
+      <ul>
+          <li>Your Thrill Username</li>
+          <li>The Milestone you are claiming</li>
+      </ul>
+      <a href="https://t.me/OPMDiamond" target="_blank" class="discord-btn">Contact Agent</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>Be Gamble Aware. <a href="https://www.begambleaware.org" target="_blank">Learn more</a></p>
+</div>
+
+<script>
+  document.querySelectorAll('.claim-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+          document.getElementById('claimModal').style.display = 'flex';
+      });
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+      document.getElementById('claimModal').style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+      const modal = document.getElementById('claimModal');
+      if (e.target === modal) {
+          modal.style.display = 'none';
+      }
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("show");
+  }
+
+  // Close menu if user clicks outside or on the ✕ icon
+  document.addEventListener("click", function (e) {
+    const menu = document.getElementById("mobileMenu");
+
+    if (e.target.textContent === "✕" || (e.target === menu && menu.classList.contains("show"))) {
+      menu.classList.remove("show");
+    }
+  });
+
+  // ✅ Automatically close the mobile menu when any menu link is clicked
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.remove("show");
+    });
+  });
+</script>
+
+</body>
+</html>

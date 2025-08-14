@@ -1,0 +1,758 @@
+body {
+    background-color: #101625 !important;
+    background-image: 
+    radial-gradient(circle at top left, rgba(63, 255, 172, 0.5), transparent 1200px),
+    radial-gradient(circle at bottom right, rgba(63, 255, 172, 0.256), transparent 1000px);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.top-links {
+    display: flex;
+    justify-content: space-between; /* space between title & buttons */
+    align-items: center;
+    padding: 16px 24px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* light gray line under */
+}
+
+.left-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+/* Container for the two right buttons */
+.right-buttons {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    gap: 16px; /* space between buttons */
+}
+.milestoneBtn{
+    color: #ffffff !important;
+    background: #20695161 !important;
+}
+.signup{
+    color: #14213e !important;
+    background-color: #ecca1d !important; /* mint */
+}
+.signup:hover{
+    color: #0f224d !important;
+    background-color: #ffd500 !important; /* mint */
+
+}
+.header .title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    font-size: 2.5rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.header2 {
+    font-size: 16px;
+    margin-bottom: 40px;
+    margin-top: -20px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    font-weight: 200 !important; /* force override */
+    font-family: sans-serif; /* make sure a lighter weight exists */
+}
+/* Override any old .top-links a styles (font, uppercase, etc.) */
+.top-links .right-buttons a.btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;                   /* not bold */
+    text-transform: none;               /* no uppercase */
+}
+
+/* Button styles */
+.right-buttons .btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #141c3141;
+    color: #ffffff;
+    padding: 12px 20px;     /* bigger buttons */
+    border-radius: 16px;    /* slightly rounder */
+    border: 1px solid #2a2e42;
+    line-height: 1.2;
+    font-size: 1.2rem;      /* larger font */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    font-weight: 600 !important;
+    text-transform: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    cursor: pointer;
+}
+/* Hover/active/focus states */
+.right-buttons .btn:hover {
+    background-color: #5cf8c3; /* mint */
+    color: #000000;            /* black text */
+}
+
+.right-buttons .btn:active {
+    transform: translateY(1px);
+}
+
+.right-buttons .btn:focus-visible {
+    outline: 2px solid #5cf8c3;
+    outline-offset: 2px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .top-links {
+        padding: 12px 14px;
+        gap: 10px;
+        justify-content: flex-end; /* keep right-aligned on mobile too */
+    }
+
+    .right-buttons .btn {
+        font-size: 0.95rem;
+        padding: 9px 14px;
+        border-radius: 12px;
+    }
+}
+
+
+
+
+/* Header */
+.header {
+    text-align: center;
+    margin-top: 50px; /* Adjusted for a bit more space */
+    width: 100%;
+    z-index: 1; /* Ensure it stays above the fruit images */
+    position: relative; /* Make sure it's positioned correctly */
+}
+
+.title {
+    font-size: 3.5rem;
+    color: #5cf8c3;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+
+.vip-milestones-container {
+    display: flex;
+    flex-direction: column;           /* Stack cards vertically */
+    align-items: center;              /* Center horizontally */
+    gap: 30px;                        /* Space between cards */
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.milestone-card {
+    width: 80%;
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 35px 30px;
+
+    display: flex;                  /* Flex container */
+    flex-direction: column;        /* Stack items vertically */
+    align-items: center;           /* Center horizontally */
+    justify-content: center;       /* Center vertically */
+
+    text-align: center;            /* Center text */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 0 10px rgba(92, 248, 196, 0.05);
+    transition: transform 0.2s ease;
+
+    position: relative;
+    padding-bottom: 60px; /* Add space for tier */
+}
+
+.milestone-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.milestone-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.milestone-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.claim-btn {
+    background-color: #5cf8c3;
+    color: rgb(29, 40, 70);
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.claim-btn:hover {
+    background-color: #46c59b;
+}
+
+.milestone-description {
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* Smaller "Wager Target" label */
+.target-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Wager target value */
+.target-value {
+    font-size: 1.5rem;          
+    font-weight: 500;
+    color: rgb(212, 203, 203);             
+    margin-bottom: 12px;
+}
+
+.prize-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Prize value */
+.prize-value {
+    
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #5cf8c3; /* Same green as button */
+    margin-bottom: 4px;
+}
+.thrill-prizes-estimate {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    user-select: none;
+}
+/* Milestone tier */
+.milestone-tier {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    background-color: rgba(92, 248, 195, 0.1);
+    color: #5cf8c3;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* NEW: Flex container for wager and prize with vertical separator */
+.milestone-row.split-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    gap: 20px;
+}
+
+/* Left side wager target */
+.left-info {
+    text-align: left;
+    flex: 1;
+}
+
+/* Right side prize */
+.right-info {
+    text-align: right;
+    flex: 1;
+}
+
+/* Vertical separator line */
+.separator-line {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    height: 50px;
+    align-self: center;
+}
+
+/* Smaller wager target label */
+.left-info .target-label {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+}
+
+/* Wager target value style */
+.left-info .target-value {
+    font-size: 1.5rem;
+    color: rgb(212, 203, 203);
+    margin-bottom: 0;
+}
+
+/* Prize value with inline label next to it */
+.right-info .prize-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #5cf8c3;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+/* Inline prize label next to prize value */
+.prize-label-inline {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #5cf8c3;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(220, 219, 219, 0.185);
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+        }
+        
+        .modal-content {
+            background-color: #101625;
+            color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(92, 248, 196, 0.1);
+        }
+        
+        .modal-content h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #5cf8c3;
+        }
+        
+        .modal-content p,
+        .modal-content li {
+            font-size: 1rem;
+            color: #eee;
+            margin-bottom: 10px;
+        }
+        
+        .modal-content ul {
+            margin-left: 20px;
+        }
+        
+        .discord-btn {
+            display: inline-block;
+            background: #5cf8c3;
+            color: #000;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 12px 80px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .discord-btn:hover {
+            background-color: #8cffe0;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            font-size: 1.4rem;
+            color: #ccc;
+            cursor: pointer;
+        }
+        
+        .close-btn:hover {
+            color: #fff;
+        }
+        
+     /* Footer Styling */
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff07;
+    color: #ffffffa9;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 50px; /* vertically center text */
+    /* Removed position: fixed and z-index */
+}
+
+.footer a {
+    color: #ffffffe1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+
+    /* Reduce button size in header */
+    .right-buttons .btn {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+  
+    /* Title and subtitle */
+    .left-title {
+      font-size: 1.2rem;
+    }
+  
+    .header .title {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+  
+    .header2 {
+      font-size: 12px;
+      margin-bottom: 30px;
+      letter-spacing: normal;
+    }
+    .target-label {
+        font-size: 0.445rem !important;
+    }
+    .target-value {
+        font-size: 1.2rem !important;
+    }
+    
+    
+    /* Countdown */
+    .countdown-wrapper {
+      padding: 20px 20px;
+      max-width: 90%;
+    }
+  
+    .countdown-title {
+      font-size: 0.75rem;
+    }
+  
+    .countdown-square {
+      width: 42px;
+      height: 54px;
+      padding: 4px;
+    }
+  
+    .countdown-value {
+      font-size: 16px;
+    }
+  
+    .countdown-label {
+      font-size: 10px;
+    }
+  
+    .colon {
+      font-size: 16px;
+      margin: 0 2px;
+    }
+  
+    /* Leaderboard layout */
+    .leaderboard-container {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    .title-row,
+    .user-row {
+      grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+      gap: 5px;
+      padding: 6px 10px;
+    }
+  
+    .user-row {
+      margin: 8px 0;
+      padding: 10px 12px;
+    }
+  
+    .user-place,
+    .user-username,
+    .user-wagered,
+    .user-prize {
+      font-size: 0.85rem;
+    }
+  
+    /* Modal adjustments */
+    .modal-content {
+      padding: 40px 20px;
+      font-size: 14px;
+    }
+  
+    .rules-list li {
+      font-size: 13px;
+    }
+  
+    .modal-btn {
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+  
+    /* Card sizes */
+    .top-three {
+      gap: 30px;
+    }
+  
+    .card {
+      width: 200px;
+      height: 220px;
+      padding: 12px;
+      border-radius: 40px;
+    }
+  
+    .card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card .username {
+      font-size: 1.4rem;
+    }
+  
+    .card .value {
+      font-size: 1.4rem;
+    }
+  
+    .card .prize-block .value {
+      font-size: 1.3rem;
+    }
+  
+    .card.first .prize-block .value {
+      font-size: 1.5rem;
+    }
+  
+    .medal-img {
+      width: 90px;
+      top: -45px;
+    }
+  
+    .rank-badge {
+      font-size: 1rem;
+      padding: 4px 12px;
+    }
+  
+    /* Buttons under leaderboard */
+    .center-buttons .btn {
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
+  
+    /* Footer */
+    .footer {
+      font-size: 12px;
+      padding: 0 6px;
+    }
+    .milestone-card {
+        width: 100%;
+        padding: 25px 20px;
+      }
+    
+      .milestone-row.split-layout {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .left-info,
+      .right-info {
+        text-align: center;
+      }
+    
+      .separator-line {
+        display: none;
+      }
+    
+      .left-info .target-value,
+      .right-info .prize-value {
+        font-size: 2.5rem;
+      }
+      .milestone-description {
+        display: none;
+    }
+    
+    
+      .thrill-prizes-estimate {
+        font-size: 0.7rem;
+      }
+    
+      .milestone-card .claim-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    
+      .milestone-tier {
+        position: static;
+        margin-top: 10px;
+      }
+  }
+  /* Hide menu by default */
+.right-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body {
+      background-color: #101625 !important;
+      background-image:
+        radial-gradient(circle at top left, rgba(63, 255, 172, 0.5), transparent 600px),
+        radial-gradient(circle at bottom right, rgba(63, 255, 172, 0.256), transparent 1000px);
+    }
+  
+    .top-links {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      position: relative;
+      z-index: 100;
+    }
+  
+    .hamburger {
+      display: block;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 101;
+    }
+  
+    .right-buttons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #196956, #050d1f);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+  
+    .right-buttons.show {
+      display: flex;
+    }
+  
+    /* Header */
+    .right-buttons::before {
+      content: "DKC x THRILL";
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.2rem;
+      color: #ffffff;
+      letter-spacing: 1px;
+      position: sticky;
+      height: 60px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.039);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1001;
+    }
+  
+    .right-buttons::after {
+      content: "✕";
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1002;
+    }
+  
+    .right-buttons .btn {
+        font-size: 1.05rem;
+        font-weight: 500;
+        padding: 14px 24px;
+        border-radius: 10px;
+        margin: 6px 20px;  /* 👈 Reduced vertical spacing */
+        background-color: rgba(255, 255, 255, 0.05);
+        color: white;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      
+  
+    .right-buttons .btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(4px);
+    }
+  
+    .right-buttons .btn.signup {
+      background-color: #f0c400;
+      color: #000;
+      font-weight: 600;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .right-buttons .btn.active {
+      background-color: #1f534b;
+    }
+  }
+  
+  

@@ -1,0 +1,1021 @@
+body {
+    background-color: #101625 !important;
+    background-image: 
+    radial-gradient(circle at top left, rgba(63, 255, 172, 0.5), transparent 1400px),
+    radial-gradient(circle at bottom right, rgba(63, 255, 172, 0.256), transparent 1000px);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.top-links {
+    display: flex;
+    justify-content: space-between; /* space between title & buttons */
+    align-items: center;
+    padding: 16px 24px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* light gray line under */
+}
+
+.left-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+/* Container for the two right buttons */
+.right-buttons {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    gap: 16px; /* space between buttons */
+}
+.leaderboardBtn{
+    color: #ffffff !important;
+    background: #20695161 !important;
+}
+.signup{
+    color: #14213e !important;
+    background-color: #ecca1d !important; /* mint */
+}
+.signup:hover{
+    color: #0f224d !important;
+    background-color: #ffd500 !important; /* mint */
+
+}
+.header .title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    font-size: 2.5rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.header2 {
+    font-size: 16px;
+    margin-bottom: 40px;
+    margin-top: -20px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    font-weight: 200 !important; /* force override */
+    font-family: sans-serif; /* make sure a lighter weight exists */
+}
+/* Override any old .top-links a styles (font, uppercase, etc.) */
+.top-links .right-buttons a.btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;                   /* not bold */
+    text-transform: none;               /* no uppercase */
+}
+
+/* Button styles */
+.right-buttons .btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #141c3141;
+    color: #ffffff;
+    padding: 12px 20px;     /* bigger buttons */
+    border-radius: 16px;    /* slightly rounder */
+    border: 1px solid #2a2e42;
+    line-height: 1.2;
+    font-size: 1.2rem;      /* larger font */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    font-weight: 600 !important;
+    text-transform: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    cursor: pointer;
+}
+/* Hover/active/focus states */
+.right-buttons .btn:hover {
+    background-color: #5cf8c3; /* mint */
+    color: #000000;            /* black text */
+}
+
+.right-buttons .btn:active {
+    transform: translateY(1px);
+}
+
+.right-buttons .btn:focus-visible {
+    outline: 2px solid #5cf8c3;
+    outline-offset: 2px;
+}
+
+
+
+
+.play-now:hover,
+.goated-mode:hover {
+    color: #ffda44;
+}
+
+.small-image {
+    width: 100px; /* Adjust the size of the small image */
+    height: 100px;
+    border-radius: 25%;
+}
+
+
+
+
+/* Header */
+.header {
+    text-align: center;
+    margin-top: 50px; /* Adjusted for a bit more space */
+    width: 100%;
+    position: relative; /* Make sure it's positioned correctly */
+}
+
+.title {
+    font-size: 3.5rem;
+    color: #5cf8c3;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+
+.top-three-bg {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; /* Slightly bigger than card area */
+    margin: 0 auto;
+    padding: 50px 0; /* Space above and below cards */
+    
+    /* Faded gradient background */
+    background: linear-gradient(
+        to bottom,
+        #1118295b 0%,   /* light at top */
+        #5cf8c400 100%      /* fade into page bg */
+    );
+
+    border-radius: 20px;
+    z-index: 0;
+}
+/* Make sure cards sit above */
+.top-three {
+    position: relative;
+    z-index: 1;
+}
+
+/* Container for Top 3 Cards Section */
+.top-three {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    position: relative;
+    width: 250px;
+    height: 260px;
+    padding: 15px 15px 20px 15px;
+    background: linear-gradient(
+        to bottom,
+        rgba(18, 40, 66, 0.95),
+        rgba(10, 20, 36, 0.95)
+    );
+    border: 1px solid rgba(92, 248, 196, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: visible;
+    border-radius: 55px;
+}
+
+/* Cut effect with a top overlay */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right, transparent 0%, rgba(18, 40, 66, 1) 20%, rgba(18, 40, 66, 1) 80%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(92, 248, 196, 0.098),
+      transparent 45%
+    );
+    z-index: 0;
+  }
+  
+
+
+.medal-img {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3; /* Make sure it's above everything */
+}
+
+
+
+
+
+.card::after {
+  bottom: -15px; /* sits below the card */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+/* Rank badge styles */
+.card .rank-badge {
+    position: absolute;
+    top: -15px; /* Moves it up so half is outside */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* Gold for 1st */
+.card.first .rank-badge {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* Silver for 2nd */
+.card.second .rank-badge {
+    background-color: #C0C0C0;
+    color: #000;
+}
+
+/* Bronze for 3rd */
+.card.third .rank-badge {
+    background-color: #CD7F32;
+    color: #fff;
+}
+
+/* Card title */
+.card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.card .username {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .card .username::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90px;       /* length of the line */
+    height: 2px;       /* thickness */
+    background: #5cf8c3; /* minty blue line */
+    border-radius: 2px;
+  }
+.card .info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 6px 0;
+    min-width: 100px;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.card .label {
+    font-size: 0.8rem;
+    color: #c0c0c0;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+
+.card .value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #5cf8c3; /* Minty blue */
+}
+.card .info-row {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+.card .prize-block .value {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Gold prize only for the 1st place card */
+.card.first .prize-block .value {
+    color: #f5e618dc; /* bright gold */
+    font-size: 1.8rem;
+
+}
+
+/* First place card raised */
+.card.first {
+    transform: translateY(-20px); /* raises the card */
+}
+
+/* Keep hover scale effect without losing the offset */
+.card.first:hover {
+    transform: translateY(-20px) scale(1.05);
+}
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px; /* space between buttons */
+    margin: 20px 0; /* space above and below */
+}
+.center-buttons-first{
+    background: #36373d9f !important;
+    border: none !important;
+}
+.center-buttons-first:hover {
+    background-color: #5cf8c3 !important; /* mint */
+    color: #000000;
+}
+.center-buttons .btn {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600 !important;
+    text-decoration: none;
+    background: #141c3169;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    cursor: pointer;
+}
+
+.center-buttons .btn:hover {
+    background-color: #5cf8c3; /* mint */
+    color: #000000;
+}
+
+.center-buttons .btn:active {
+    transform: translateY(1px);
+}
+
+
+.center-buttons .btn svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle; /* Align icon vertically with text */
+    position: relative;
+    bottom: 2px;
+  }
+/* Wagered Label and Wager Value Spacing (Reduce distance between them) */
+.wagered-label {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px; /* Reduced space between label and wagered value */
+}
+
+.wager-value {
+    font-size: 1rem; /* Smaller font size for wagered value */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Bonus Label and Prize Spacing (Fix the gap between them) */
+.bonus-label {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px; /* Adjust the space between bonus label and prize value */
+}
+
+.bonus {
+    font-size: 2rem; /* Larger size for bonus value */
+    font-weight: bold;
+    color: #ffffff; /* Gold color for bonus */
+    font-weight: 700;
+
+}
+
+.username {
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+/* Countdown Wrapper */
+.countdown-wrapper {
+    background: rgba(0, 0, 0, 0.053);
+    padding: 40px 50px; /* reduced padding */
+    border-radius: 12px;
+    max-width: 300px; /* reduced from 600px */
+    margin: 0 auto 30px auto;
+    text-align: center;
+    box-shadow: inset 0 0 3px rgba(92, 248, 196, 0.1);
+    border: 0.2px solid #ffffff25;
+}
+
+/* Title */
+.countdown-title {
+    font-size: 0.9rem; /* reduced from 1.8rem */
+    color: #ffffff;
+    font-family: 'Archivo Black', sans-serif;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Container for countdown blocks */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px; /* smaller spacing */
+}
+
+/* Countdown Squares */
+.countdown-square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 54px;         /* was 80px */
+    height: 64px;        /* was 100px */
+    background-color: #0e121f31;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 6px;        /* smaller padding */
+}
+
+/* Values (numbers) */
+.countdown-value {
+    font-size: 18px;     /* was 36px */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Labels (days, hours...) */
+.countdown-label {
+    color: #b0bfcf;
+    margin-top: 3px;
+    font-family: sans-serif;
+}
+
+/* Colons */
+.colon {
+    font-size: 18px;     /* was 36px */
+    font-weight: bold;
+    color: #5cf8c3;
+    margin: 0 3px;
+}
+
+
+
+        /* The time values (Days, Hours, etc.) */
+        .countdown-value {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        /* Titles (Days, Hours, etc.) */
+        .countdown-label {
+            font-size: 11px;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        /* Countdown timer styling */
+        .countdown-timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff5733;
+        }
+/* Description Section */
+.description {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.description p {
+    font-size: 1rem;
+    color: #f8f8f8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* --- LEADERBOARD CONTAINER --- */
+.leaderboard-container {
+    width: 80%;
+    margin: 50px auto;
+    background: #0f172acb;
+    padding: 30px 40px;
+    border-radius: 20px;
+    color: white;
+    backdrop-filter: blur(6px);
+    box-sizing: border-box; /* add this */
+}
+
+/* --- SIMPLE TITLE HEADER --- */
+.title-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* subtle line */
+}
+
+/* Title text styling */
+.title-row > div {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- USER ROW STYLING --- */
+.user-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+    padding: 12px 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 10px rgba(92, 248, 196, 0.03);
+    transition: all 0.25s ease;
+    box-sizing: border-box;  /* add this */
+}
+
+.user-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(92, 248, 196, 0.05);
+    cursor: pointer;
+}
+
+.user-row > div {
+    display: flex;            /* added */
+    justify-content: center;  /* added */
+    align-items: center;      /* added */
+}
+
+  
+  /* --- INDIVIDUAL CELLS --- */
+  .user-place,
+  .user-username,
+  .user-wagered,
+  .user-prize {
+    text-align: center;
+    font-size: 1rem;
+    color: #ffffff;
+    font-family: 'Archivo Black', sans-serif;
+  }
+  
+  /* Highlight prize & wager */
+  .user-prize {
+    color: #5cf8c3;
+    font-weight: bold;
+  }
+  
+  .user-wagered {
+    color: #ffffff;
+  }
+  
+
+ 
+        .mobile {
+            display: none;
+        }
+
+        .custom-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        
+            z-index: 10000; /* SUPER HIGH to override anything */
+            justify-content: center;
+            align-items: center;
+        }
+        
+/* Modal Content */
+.modal-content {
+    background-color: #101625;
+    padding: 70px 80px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Close button */
+.close-btn {
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ccc;
+}
+
+/* Rule List Styling */
+.rules-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.rules-list li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.rules-list .check {
+    color: #00e676;
+    margin-right: 10px;
+}
+
+.rules-list .warn {
+    color: #ffca28;
+    margin-right: 10px;
+}
+
+.rules-list .info {
+    color: #29b6f6;
+    margin-right: 10px;
+}
+
+/* Modal button */
+.modal-btn {
+    margin-top: 25px;
+    padding: 10px 25px;
+    background-color: #8cffe0;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.modal-btn:hover {
+    background-color: #65caaf;
+}
+   
+
+.footer {
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff07;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+  }
+
+  
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+@media (max-width: 480px) {
+
+    /* Reduce button size in header */
+    .right-buttons .btn {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+  
+    /* Title and subtitle */
+    .left-title {
+      font-size: 1.2rem;
+    }
+  
+    .header .title {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+  
+    .header2 {
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
+  
+    /* Countdown */
+    .countdown-wrapper {
+      padding: 20px 20px;
+      max-width: 75%;
+    }
+  
+    .countdown-title {
+      font-size: 0.75rem;
+    }
+  
+    .countdown-square {
+      width: 42px;
+      height: 54px;
+      padding: 4px;
+    }
+  
+    .countdown-value {
+      font-size: 16px;
+    }
+  
+    .countdown-label {
+      font-size: 10px;
+    }
+  
+    .colon {
+      font-size: 16px;
+      margin: 0 2px;
+    }
+  
+    /* Leaderboard layout */
+    .leaderboard-container {
+      width: 95%;
+      padding: 20px;
+    }
+    .title-row > div {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .title-row,
+    .user-row {
+      grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+      gap: 5px;
+      padding: 6px 10px;
+    }
+  
+    .user-row {
+      margin: 8px 0;
+      padding: 10px 12px;
+    }
+  
+    .user-place,
+    .user-username,
+    .user-wagered,
+    .user-prize {
+      font-size: 0.85rem;
+    }
+  
+    /* Modal adjustments */
+    .modal-content {
+      padding: 40px 20px;
+      font-size: 14px;
+    }
+  
+    .rules-list li {
+      font-size: 13px;
+    }
+  
+    .modal-btn {
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+  
+    /* Card sizes */
+    .top-three {
+      gap: 30px;
+    }
+  
+    .card {
+      width: 200px;
+      height: 220px;
+      padding: 12px;
+      border-radius: 40px;
+    }
+  
+    .card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card .username {
+      font-size: 1.4rem;
+    }
+  
+    .card .value {
+      font-size: 1.4rem;
+    }
+  
+    .card .prize-block .value {
+      font-size: 1.3rem;
+    }
+  
+    .card.first .prize-block .value {
+      font-size: 1.5rem;
+    }
+  
+    .medal-img {
+      width: 90px;
+      top: -45px;
+    }
+  
+    .rank-badge {
+      font-size: 1rem;
+      padding: 4px 12px;
+    }
+  
+    /* Buttons under leaderboard */
+    .center-buttons .btn {
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
+  
+    /* Footer */
+    .footer {
+      font-size: 12px;
+      padding: 0 6px;
+    }
+    
+  }
+  /* Hide menu by default */
+.right-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body {
+      background-color: #101625 !important;
+      background-image:
+        radial-gradient(circle at top left, rgba(63, 255, 172, 0.5), transparent 600px),
+        radial-gradient(circle at bottom right, rgba(63, 255, 172, 0.256), transparent 1000px);
+    }
+  
+    .top-links {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      position: relative;
+      z-index: 100;
+    }
+  
+    .hamburger {
+      display: block;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 101;
+    }
+  
+    .right-buttons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(to bottom, #196956, #050d1f);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+  
+    .right-buttons.show {
+      display: flex;
+    }
+  
+    /* Header */
+    .right-buttons::before {
+      content: "DKC x THRILL";
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.2rem;
+      color: #ffffff;
+      letter-spacing: 1px;
+      position: sticky;
+      height: 60px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.039);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1001;
+    }
+  
+    .right-buttons::after {
+      content: "✕";
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1002;
+    }
+  
+    .right-buttons .btn {
+        font-size: 1.05rem;
+        font-weight: 500;
+        padding: 14px 24px;
+        border-radius: 10px;
+        margin: 6px 20px;  /* 👈 Reduced vertical spacing */
+        background-color: rgba(255, 255, 255, 0.05);
+        color: white;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      
+  
+    .right-buttons .btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(4px);
+    }
+  
+    .right-buttons .btn.signup {
+      background-color: #f0c400;
+      color: #000;
+      font-weight: 600;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .right-buttons .btn.active {
+      background-color: #1f534b;
+    }
+  }
+  
+  

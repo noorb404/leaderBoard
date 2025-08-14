@@ -4,116 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Diamond Rewards</title>
+    <title>DKC Rewards</title>
 
         <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/webLogo.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <!-- External CSS File -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index-styles.css">
     <!-- Internal CSS -->
-    <style>
-        /* Fruit images at the bottom */
-        .rollete-left, .goat-right {
-            position: absolute;
-            bottom: 0;
-            width: 10%;
-            height: auto;
-            z-index: -1;
-        }
-
-        .rollete-left {
-            left: 0;
-            background-image: url('images/rollete.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.5;
-        }
-
-        .goat-right {
-            right: 0;
-            background-image: url('images/goat.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.5;
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Top Section with links and small image -->
     <div class="top-links">
-        <a href="https://www.goated.com/r/VIPS" class="play-now">PLAY NOW</a>
-        <img src="images/goated.png" alt="Small Image" class="small-image">
-        <a href="https://kick.com/1xdiamond" class="goated-mode">CHANNEL</a>
-    </div>
-
-    <!-- Fruit images on the sides -->
-    <div class="fruit-left"></div>
-
+        <div class="left-title">DKC x THRILL</div>
+      
+        <!-- Hamburger Button (visible on mobile only) -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      
+        <!-- Mobile Menu (Toggle display on mobile only) -->
+        <div class="right-buttons" id="mobileMenu">
+          <a href="index.html" class="leaderboardBtn btn">Leaderboard</a>
+          <a href="weekly.html" class="weeklyBtn btn">Weekly Milestones</a>
+          <a href="milestones.html" class="milestoneBtn btn">VIP Transfer</a>
+          <a href="https://thrill.com/?r=DKS" class="btn signup">Sign Up On Thrill</a>
+        </div>
+      </div>
+      
     <!-- Headline Section -->
     <header class="header">
-        <h1 class="title">WEEKLY WAGER LEADERBOARD</h1>
+        <h1 class="title">$3,000 WEEKLY LEADERBOARD</h1>
     </header>
-
-    <div class="fruit-right"></div>
-
-    <!-- Mobile Order -->
-    <div class="leaderboard mobile">
-        <!-- Dynamic Leaderboard for Mobile (1st, 2nd, 3rd places) -->
-        <div class="top-three"  id="top-three-mobile">
-            <!-- Dynamic Cards for top 3 players -->
-        </div>
+        <!-- Headline Section -->
+    <div class="header2">
+        <div >Challenge fellow players and rise through the ranks to earn great rewards!</div>
     </div>
+    <!-- Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- Desktop Order -->
-    <div class="leaderboard desktop" >
-        <div class="top-three" id="top-three-desktop">
-            <!-- Dynamic Cards for top 3 players -->
-        </div>
+    <div class="center-buttons">
+        <a href="javascript:void(0);" class="btn btn-green" onclick="document.getElementById('rulesModal').style.display='flex'">
+            <i data-feather="file-text"></i> View Rules
+        </a>
+        <a href="index.html" class="center-buttons-first btn btn-dark">
+            <i data-feather="rotate-ccw"></i> Previous Results
+        </a>
     </div>
+    
+    <!-- Activate icons -->
+    <script>
+        feather.replace();
+    </script>
+<!-- Countdown Timer Wrapper -->
+<div class="countdown-wrapper">
+    <h2 class="countdown-title">Leaderboard ends in</h2>
 
-    <!-- Countdown Timer Section -->
     <div class="countdown-container">
         <div class="countdown-square">
             <div id="days" class="countdown-value">00</div>
             <div class="countdown-label">Days</div>
         </div>
+        <div class="colon">:</div>
         <div class="countdown-square">
             <div id="hours" class="countdown-value">00</div>
             <div class="countdown-label">Hours</div>
         </div>
+        <div class="colon">:</div>
         <div class="countdown-square">
             <div id="minutes" class="countdown-value">00</div>
             <div class="countdown-label">Minutes</div>
         </div>
+        <div class="colon">:</div>
         <div class="countdown-square">
             <div id="seconds" class="countdown-value">00</div>
             <div class="countdown-label">Seconds</div>
         </div>
     </div>
+</div>
+
+    <div class="top-three-bg">
+
+    <!-- Mobile Order -->
+    <div class="leaderboard mobile">
+            <!-- Dynamic Leaderboard for Mobile (1st, 2nd, 3rd places) -->
+            <div class="top-three"  id="top-three-mobile">
+                <!-- Dynamic Cards for top 3 players -->
+            </div>
+    </div>
+
+    <!-- Desktop Order -->
+    <div class="leaderboard desktop">
+            <div class="top-three" id="top-three-desktop">
+                <!-- Dynamic Cards for top 3 players -->
+            </div>
+    </div>
 
     <!-- Rest of Leaderboard (Users 4-10) -->
     <div class="leaderboard-container" id="leaderboard-container">
+        
         <!-- Dynamic Rows for 4th to 10th users will be injected here -->
     </div>
 
-    <!-- Fruit images at the bottom -->
-    <div>
-        <img src="images/rollete.png" class="rollete-left">
-        <img src="images/goat.png" class="goat-right">
+<!-- Leaderboard Rules Modal -->
+<div id="rulesModal" class="custom-modal">
+    <div class="modal-content rules-modal">
+        <span class="close-btn">&times;</span>
+        <h2 style="color: #5cf8c3; text-align: center; font-size: 2.4rem;">Leaderboard Rules</h2>
+        <ul class="rules-list">
+            <li><span class="check">✔</span> All prizes are paid out within 24–48 hours after the competition ends.</li>
+            <li><span class="check">✔</span> Prizes are awarded as an instantly withdrawable Tip on Thrill.</li>
+            <li><span class="check">✔</span> Wager abuse to gain an unfair advantage will lead to your account being removed from the leaderboard.</li>
+            <li><span class="warn">⚠</span> DKC reserves the right to disqualify any player suspected of unfair play.</li>
+            <li><span class="info">ℹ</span> Affiliate code <strong>DKC</strong> is counting towards the leaderboard.</li>
+        </ul>
+        <button class="modal-btn" onclick="document.getElementById('rulesModal').style.display='none'">Close</button>
     </div>
+</div>
+<script>
+    const modal = document.getElementById('rulesModal');
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>Be Gamble Aware. <a href="https://www.begambleaware.org" target="_blank">Learn more</a></p>
-    </div>
+    function openModal() {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
 
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    document.querySelector('.btn-green').addEventListener('click', openModal);
+    document.querySelector('.close-btn').addEventListener('click', closeModal);
+
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('custom-modal')) {
+            closeModal();
+        }
+    });
+</script>
+<script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("show");
+    }
+  
+    // Close menu if user clicks outside or on the ✕ icon
+    document.addEventListener("click", function (e) {
+      const menu = document.getElementById("mobileMenu");
+  
+      if (e.target.textContent === "✕" || (e.target === menu && menu.classList.contains("show"))) {
+        menu.classList.remove("show");
+      }
+    });
+  
+    // ✅ Automatically close the mobile menu when any menu link is clicked
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+      link.addEventListener("click", () => {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.remove("show");
+      });
+    });
+  </script>
+  
     <!-- External JavaScript File -->
     <script src="script.js"></script>
+
+      <!-- Footer -->
+  <div class="footer">
+    <p>Be Gamble Aware. <a href="https://www.begambleaware.org" target="_blank">Learn more</a></p>
+</div>
+
 </body>
 </html>
