@@ -340,6 +340,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
 }
 
 .modal-content {
@@ -382,7 +383,6 @@ body {
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
-
 .discord-btn:hover {
     background-color: #8cffe0;
 }
