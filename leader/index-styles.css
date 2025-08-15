@@ -910,7 +910,28 @@ body {
     color: white;
     cursor: pointer;
 }
+@media (max-width: 480px) {
+    .top-three {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card.second {
+      order: 2;
+      transform: translateY(-20px); /* keep it raised */
 
+    }
+  
+    .card.first {
+      order: 1;
+      transform: translateY(-40px); /* keep it raised */
+    }
+  
+    .card.third {
+      order: 3;
+    }
+  }
 @media (max-width: 768px) {
     body {
       background-color: #101625 !important;
