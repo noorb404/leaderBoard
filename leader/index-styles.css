@@ -828,14 +828,17 @@ body {
   
     /* Modal adjustments */
     .modal-content {
-      padding: 40px 20px;
-      font-size: 14px;
+      padding: 20px 30px;
     }
-  
+    .leaderboardTitle{
+      font-size: 19px !important;
+
+    }
     .rules-list li {
       font-size: 13px;
     }
-  
+
+    
     .modal-btn {
       padding: 8px 20px;
       font-size: 14px;
