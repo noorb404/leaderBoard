@@ -544,28 +544,28 @@ body {
 .leaderboard-container {
     width: 80%;
     margin: 50px auto;
-    background: #0f172acb;
+    background: #0f172a6e;
     padding: 30px 40px;
     border-radius: 20px;
     color: white;
     backdrop-filter: blur(6px);
     box-sizing: border-box; /* add this */
+    border: 1px solid rgba(255, 255, 255, 0.144);
+
 }
 
 /* --- SIMPLE TITLE HEADER --- */
 .title-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr;
+    grid-template-columns:  2fr 2fr 2fr;
     padding: 8px 0;
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* subtle line */
 }
 
 /* Title text styling */
 .title-row > div {
     font-family: 'Outfit', sans-serif !important;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
@@ -575,16 +575,15 @@ body {
 /* --- USER ROW STYLING --- */
 .user-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr;
+    grid-template-columns:  2fr 2fr 2fr;
     gap: 10px;
     align-items: center;
     margin: 10px 0;
     padding: 12px 20px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.02);
-    box-shadow: 0 0 10px rgba(92, 248, 196, 0.03);
+    text-transform: uppercase;
+
     transition: all 0.25s ease;
-    box-sizing: border-box;  /* add this */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.094);
 }
 
 .user-row:hover {
@@ -753,7 +752,7 @@ body {
     }
   
     .header .title {
-        font-size: 2.6rem;           /* Bigger font */
+        font-size: 2.8rem;           /* Bigger font */
         font-weight: 800;            /* Very bold */
         color: #ffffff;              /* Keep it white */
         text-align: center;          /* Center each line */
@@ -769,7 +768,7 @@ body {
     }
     
     .header2 {
-      font-size: 14px;
+      font-size: 1.05rem;
       margin-bottom: 30px;
       letter-spacing: normal;
     }
@@ -803,7 +802,7 @@ body {
       margin: 0 2px;
     }
   
-    /* Leaderboard layout */
+    /* Leaderboard layout phone size */
     .leaderboard-container {
       width: 95%;
       padding: 20px;
@@ -811,7 +810,6 @@ body {
     .title-row > div {
         font-family: 'Outfit', sans-serif !important;
         font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.7);
         font-weight: 500;
         text-align: center;
         text-transform: uppercase;
@@ -820,7 +818,7 @@ body {
     
     .title-row,
     .user-row {
-      grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr;
+      grid-template-columns:  1.5fr 1.5fr 1.5fr;
       gap: 5px;
       padding: 6px 10px;
     }
@@ -970,7 +968,48 @@ body {
       cursor: pointer;
       z-index: 101;
     }
-  
+    .leaderboard-container {
+    width: 95%;
+    padding: 16px;
+    margin: 10px auto;
+    border-radius: 16px;
+    background: #0f172a6e;
+    backdrop-filter: blur(8px);
+  }
+
+  .leaderboard-container .title-row,
+  .leaderboard-container .user-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+  }
+
+  .leaderboard-container .title-row {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .leaderboard-container .user-row div {
+    flex: 1;
+    text-align: left;
+    font-size: 1rem !important;
+
+    color: #ffffff;
+  }
+
+  .leaderboard-container .prize {
+    color: #5cf8c3 !important;
+    font-weight: 700;
+  }
+
+  /* Optional: Center small values */
+  .leaderboard-container .user-row div:nth-child(1),
+  .leaderboard-container .user-row div:nth-child(4) {
+    text-align: center;
+  }
     .right-buttons {
       position: fixed;
       top: 0;
