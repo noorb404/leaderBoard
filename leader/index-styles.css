@@ -983,8 +983,8 @@ body {
     }
     
     .coming-soon-text {
-        margin-top: -600px;
-      }
+        text-shadow:none;
+    }
     .top-links {
       flex-direction: row;
       justify-content: space-between;
