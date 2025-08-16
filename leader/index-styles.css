@@ -754,7 +754,7 @@ body {
     }
   
     .header .title {
-        font-size: 2.7rem;           /* Bigger font */
+        font-size: 2.6rem;           /* Bigger font */
         font-weight: 800;            /* Very bold */
         color: #ffffff;              /* Keep it white */
         text-align: center;          /* Center each line */
@@ -762,6 +762,7 @@ body {
         line-height: 1.2;            /* Tighter line spacing */
         margin-bottom: 30px;
         letter-spacing: 1px;
+        max-width: 98%;
         font-family: 'Archivo Black', sans-serif;
     }
     
