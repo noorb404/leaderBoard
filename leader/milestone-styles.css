@@ -6,7 +6,7 @@ body {
 
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Outfit', sans-serif !important;
 }
 
 .top-links {
@@ -28,7 +28,7 @@ body {
 /* Container for the two right buttons */
 .right-buttons {
     display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+font-family: 'Outfit', sans-serif !important;
 
     gap: 16px; /* space between buttons */
 }
@@ -46,13 +46,13 @@ body {
 
 }
 .header .title {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+font-family: 'Outfit', sans-serif !important;
     font-weight: bold;
     margin-bottom: 40px;
 
     font-size: 2.5rem;
     color: #ffffff;
-    letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 .header2 {
@@ -60,7 +60,6 @@ body {
     margin-bottom: 40px;
     margin-top: -20px;
     color: #ffffff;
-    letter-spacing: 2px;
     text-align: center;
     width: 100%;
     z-index: 1;
@@ -70,7 +69,7 @@ body {
 }
 /* Override any old .top-links a styles (font, uppercase, etc.) */
 .top-links .right-buttons a.btn {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+font-family: 'Outfit', sans-serif !important;
     font-weight: 400;                   /* not bold */
     text-transform: none;               /* no uppercase */
 }
@@ -86,7 +85,7 @@ body {
     border: 1px solid #2a2e42;
     line-height: 1.2;
     font-size: 1.2rem;      /* larger font */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+font-family: 'Outfit', sans-serif !important;
 
     font-weight: 600 !important;
     text-transform: none;
@@ -347,7 +346,7 @@ body {
             background-color: rgba(220, 219, 219, 0.185);
             justify-content: center;
             align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Outfit', sans-serif !important;
 
         }
         
@@ -693,7 +692,7 @@ body {
     /* Header */
     .right-buttons::before {
       content: "DKC x THRILL";
-      font-family: 'Archivo Black', sans-serif;
+      font-family: 'Outfit', sans-serif !important;
       font-size: 1.2rem;
       color: #ffffff;
       letter-spacing: 1px;
@@ -755,4 +754,4 @@ body {
     }
   }
   
-   
+  
