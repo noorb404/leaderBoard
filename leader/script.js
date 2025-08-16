@@ -37,7 +37,7 @@ updateCountdown();
 
 // Utility functions
 function maskUsername(username) {
-    return `**${username.slice(-3)}`;
+    return `${username.slice(-3)}***`;
 }
 
 function getOrdinalSuffix(number) {
@@ -80,18 +80,7 @@ function renderLeaderboard(players) {
     desktopContainer.innerHTML = '';
     leaderboardContainer.innerHTML = '';
 
-    // Insert the header row with titles
-    leaderboardContainer.innerHTML = `
-    <div class="leaderboard-container" id="leaderboard-container">
-        <div class="title-row">
-        <div>Place</div>
-        <div>Username</div>
-        <div>Wagered</div>
-        <div>Prize</div>
-        </div>
-        <!-- User rows dynamically added here -->
-    </div>
-    `;
+
 
     // Function to generate the player cards for top 3
     const generatePlayerCard = (player, index) => {
@@ -115,7 +104,7 @@ function renderLeaderboard(players) {
                         <div class="value">${formatCurrency(player.wagered.this_week)}</div>
                     </div>
                     <div class="info-block prize-block">
-                        <div class="label gray-label">Prize</div>
+                        <div class="prize label gray-label">Prize</div>
                         <div class="value">${formatCurrency(getPrize(index))}</div>
                     </div>
                 </div>
@@ -137,10 +126,9 @@ function renderLeaderboard(players) {
     players.slice(3, 10).forEach((player, index) => {
         leaderboardContainer.innerHTML += `
             <div class="user-row">
-                <div class="user-place">${getOrdinalSuffix(index + 4)}</div>
                 <div class="user-username">${maskUsername(player.name)}</div>
                 <div class="user-wagered">${formatCurrency(player.wagered.this_week)}</div>
-                <div class="user-prize">${formatCurrency(getPrize(index + 3))}</div>
+                <div style="color: #5cf8c3;" class="user-prize">${formatCurrency(getPrize(index + 3))}</div>
             </div>
         `;
     });
