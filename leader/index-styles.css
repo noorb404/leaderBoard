@@ -754,10 +754,21 @@ body {
     }
   
     .header .title {
-      font-size: 1.3rem;
-      margin-bottom: 40px;
+        font-size: 2.7rem;           /* Bigger font */
+        font-weight: 800;            /* Very bold */
+        color: #ffffff;              /* Keep it white */
+        text-align: center;          /* Center each line */
+        text-transform: uppercase;   /* All caps */
+        line-height: 1.2;            /* Tighter line spacing */
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        font-family: 'Archivo Black', sans-serif;
     }
-  
+    
+    .header .title div {
+        display: block;             /* Force new line */
+    }
+    
     .header2 {
       font-size: 12px;
       margin-bottom: 30px;
