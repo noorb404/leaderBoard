@@ -983,7 +983,8 @@ body {
     }
     
     .coming-soon-text {
-        text-shadow:none;
+        text-shadow: 0 0 5px #5cf8c3, 0 0 5px #5cf8c3;
+
     }
     .top-links {
       flex-direction: row;
