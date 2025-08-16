@@ -5,7 +5,7 @@ body {
         radial-gradient(circle at bottom right, rgba(63, 255, 172, 0.256), transparent 800px);
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Outfit', sans-serif !important;
 }
 
 .top-links {
@@ -27,7 +27,7 @@ body {
 
 .right-buttons {
     display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Outfit', sans-serif !important;
     gap: 16px;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .header .title {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Outfit', sans-serif !important;
     font-weight: bold;
     margin-bottom: 40px;
     font-size: 2.5rem;
@@ -67,7 +67,7 @@ body {
 }
 
 .top-links .right-buttons a.btn {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Outfit', sans-serif !important;
     font-weight: 400;
     text-transform: none;
 }
@@ -339,7 +339,7 @@ body {
     background-color: rgba(220, 219, 219, 0.185);
     justify-content: center;
     align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Outfit', sans-serif !important;
 
 }
 
@@ -640,7 +640,7 @@ body {
     /* Header */
     .right-buttons::before {
       content: "DKC x THRILL";
-      font-family: 'Archivo Black', sans-serif;
+      font-family: 'Outfit', sans-serif !important;
       font-size: 1.2rem;
       color: #ffffff;
       letter-spacing: 1px;
