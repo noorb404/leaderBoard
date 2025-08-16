@@ -449,15 +449,21 @@ font-family: 'Outfit', sans-serif !important;
     }
   
     .header .title {
-      font-size: 1.3rem;
+      font-size: 2.8rem;
       margin-bottom: 30px;
     }
   
     .header2 {
-      font-size: 12px;
+      font-size: 0.85rem;
       margin-bottom: 30px;
       letter-spacing: normal;
     }
+    .header3 {
+        font-size: 0.75rem !important;
+        margin-bottom: 30px;
+        color: #ffffffb6;
+        letter-spacing: normal;
+      }
     .target-label {
         font-size: 0.445rem !important;
     }
