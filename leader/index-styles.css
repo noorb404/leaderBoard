@@ -64,7 +64,7 @@ body {
     color: #5cf8c3;
     text-align: center;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #ffffff; /* border size and color */
+    -webkit-text-stroke: 0.25px #ffffff; /* border size and color */
     text-shadow: 0 0 15px #5cf8c3, 0 0 10px #5cf8c3;
   }
 .signup{
