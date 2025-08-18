@@ -48,7 +48,7 @@ function getOrdinalSuffix(number) {
 }
 
 function getPrize(rank) {
-    const prizes = [1000, 600, 400, 300, 200,150,125,100,75,50];
+    const prizes = [1000, 400, 250, 150, 100,60,40];
     return prizes[rank] || 0;
 }
 
@@ -64,10 +64,7 @@ const dummyPlayers = [
     { name: "FourthStar", wagered: { this_week: 350845 } },
     { name: "ThirdPlace", wagered: { this_week: 230421 } },
     { name: "FourthStar", wagered: { this_week: 120421 } },
-    { name: "ThirdPlace", wagered: { this_week: 110025 } },
-    { name: "FourthStar", wagered: { this_week: 90421 } },
-    { name: "FourthStar", wagered: { this_week: 67201 } },
-    { name: "FifthAce", wagered: { this_week: 45007 } }
+    { name: "ThirdPlace", wagered: { this_week: 110025 } }
 ];
 // Render leaderboard dynamically
 function renderLeaderboard(players) {
