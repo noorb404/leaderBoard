@@ -38,7 +38,7 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // Utilities
-function maskUsername(username) { return `${username.slice(-3)}***`; }
+function maskUsername(username) { return `${username.slice(0, 3)}***`; }
 const PRIZES = [600, 375, 250, 175, 100]; // custom prizes
 function getPrize(rank) { return PRIZES[rank] || 0; }
 function formatCurrency(amount) { return '$' + amount.toLocaleString(); }
